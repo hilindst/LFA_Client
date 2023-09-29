@@ -13,4 +13,10 @@ export class ArticleComponent {
   getColor(){
     return this.isTechRelated === true ? 'blue' : 'yellow';
   }
+
+  changeButton(){
+    this.isTechRelated = !this.isTechRelated;
 }
+
+}
+
