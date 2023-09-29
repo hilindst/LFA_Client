@@ -1,6 +1,11 @@
+/*----Overlay and Floater----*/
 const body = document.body;
 const input = document.querySelector('input[type=text]');
 const overlay = document.querySelector('.overlay');
+let todos = [];
+
+
+
 
 function showFloater() {
     body.classList.add('show-floater');
@@ -16,52 +21,57 @@ function closeFloater() {
   overlay.addEventListener('click', closeFloater);
   input.addEventListener('focusin', showFloater);
   input.addEventListener('focusout', closeFloater);
-/* ============== */
+
+/* ======Tasks======== */
 
 const taskList = document.querySelector('.task-list');
 const taskForm = document.querySelector('.task-form');
 
-taskForm.addEventListener('submit', createTask);
-
-function createTask(e) {
+taskForm.addEventListener('submit', function(e) {
   e.preventDefault();
+  createTask(input.value);
+});
+
+function createTask(input) {
   if(!taskInput.value) {
-    alert('We need info!');
+    alert('What do? WHAT DO?');
     return;
   }
-  const task = input.value;
+  const task = {
+    name: input.value,
+    completed: false
+  };
   const newTask = document.createElement('li');
   const removeButton = document.createElement("button");
-  removeButton.classList.add('btn-outline-warning');
-  console.log(removeButton.classList);
+  removeButton.classList.add("btn-warning");
   removeButton.innerHTML = "X";
   newTask.innerText = task;
   newTask.appendChild(removeButton);
   taskList.appendChild(newTask);
+  todos.push(task);
+  renderTask(task);
   taskForm.reset();
   closeFloater();
+
+  removeButton.addEventListener("click", function () {
+    newTask.remove();
+    // Save tasks to local storage when a task is deleted
+    /* saveTasksToLocalStorage(); */
+  }); 
 }
 
 const taskInput = taskForm.querySelector('input[type=text]');
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-/*---------To Do----------
-1) Local Storage
-2) Deleting Tasks
-  -prettify those buttons
-3)Marking Complete
-*/
+let text = document.getElementsByTagName('li').innerHTML;
+console.log(text);
+text.innerHTML.addEventListener("click", completed);
 
-function removeTask(e) {
-  console.log(e);
-  if (!e.target.matches('button')) return;
-  console.log('Task Removed: ', index);
-  //find index
-  const index = e.target.parentNode.dataset.id; //console.dir(index)
-  //remove from the bookmarks list using splice
-  taskList.splice(index, 1); //(index, counter) how many to remove
-  //fill list again
-  fillBookmarksList(bookmarks);
-  //store back in localStorage
-  storeBookmarks(bookmarks);
-}
+function completed() {
+  if (document.getElementsByTagName('li').style.textDecoration === "none"){
+    document.getElementsByName('li').write(text.strike());
+  } else {
+    document.getElementsByName('li').style.textDecoration = "none";
+  }
+};
+

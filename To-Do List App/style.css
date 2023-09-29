@@ -120,6 +120,26 @@ body.show-floater .overlay {
   border-bottom: 0;
 }
 
+.btn-warning {
+  border: 1px solid #ffc107;
+  background-color: var(--grey);
+  color: #ffc107;
+  padding: 4px 8px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: color .15s ease-in-out background-color;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.btn-warning:hover {
+  background: #ffc107;
+  color: #000;
+}
 
 /* .task .title {
   display: flex;
