@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.sidebar {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 40px;
+  flex-shrink: 0;
+  background-color: #fff;
+  border-right: 2px solid #D2D2D2;
+  display: block;
+  }
+
+
+  .logo {
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  }
+
+  .task-list {
+  display: flex;
+  font-size: 1.25rem;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #48C15B;
+  padding: 1em 5px;
+  }
+
+  .user {
+  display: flex;
+  /* width: 244px; */
+  padding: 11px 16px;
+  align-items: flex-start;
+  gap: 10px;
+  border-top: 1px solid #DDD;
+  background: #FFF;
+  }
