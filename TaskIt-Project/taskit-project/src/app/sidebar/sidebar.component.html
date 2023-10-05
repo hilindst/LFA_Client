@@ -1,13 +1,27 @@
-
-
-
 <div class="sidebar col-md-3">
 
   <div class="logo">
     <img src="../../assets/img/Logotaskit.jpg"/>
   </div>
   <div class="task-list btn btn-success">Task List</div>
-  <app-login-float></app-login-float>
+
   </div>
 
-
+  <div>
+    <div class="list-group-item user col-md-3">
+      <span>
+      <img
+      [src]="user.imagePath"
+      alt="{{ user.name }}"
+      class="img-responsive"
+      style="max-height: 50px; border-radius: 50%; align-items: center;"></span>
+    <div>
+        <h4 class="list-group-item-heading">{{ user.name }}</h4>
+        <p class="list-group-item-text">{{ user.email }}</p>
+    </div>
+    <div>
+      <a href="#">
+      <img src="../../assets/img/Frame 9.jpg" alt="log-out">
+      </a>
+</div>
+  </div>

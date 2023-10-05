@@ -34,10 +34,14 @@
 
   .user {
   display: flex;
-  /* width: 244px; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
   padding: 11px 16px;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-evenly;
   gap: 10px;
-  border-top: 1px solid #DDD;
+  border-top: 2px solid #DDD;
+  border-right: 2px solid #D2D2D2;
   background: #FFF;
   }
