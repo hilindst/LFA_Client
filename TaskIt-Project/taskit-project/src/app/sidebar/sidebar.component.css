@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
 }
+.container {
+  width: 100%;
+  min-width:min-content;
+
+}
 .sidebar {
   height: 100%;
   position: absolute;
@@ -23,23 +28,23 @@
 
   .task-list {
   display: flex;
-  font-size: 1.25rem;
-  margin: 20px;
+  font-size: 1em;
+  margin: 2em;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   background: #48C15B;
-  padding: 1em 5px;
+  padding: 1em .5em;
   }
 
   .user {
   display: flex;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
-  padding: 11px 16px;
+  justify-content: center;
+  padding: .8em 1em;
   align-items: center;
-  justify-content: space-evenly;
   gap: 10px;
   border-top: 2px solid #DDD;
   border-right: 2px solid #D2D2D2;

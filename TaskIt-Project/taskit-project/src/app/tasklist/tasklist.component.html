@@ -1,27 +1,53 @@
+<div class="task-list content">
 <header>
   <h1>Task List</h1>
 </header>
-<table class="table">
+<div class="filter">
+  <label>Filter by: </label>
+  <select name="" id=""></select>
+  <select name="" id=""></select>
+</div>
+<div>
+  <div>
+    <mat-form-field>
+      <input
+        matInput
+        [(ngModel)]="name"
+        placeholder="What's your favorite color?"
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </div>
+  <h4 *ngIf="color">
+    You selected:
+    <p style="font-weight: bold">{{ color }}</p>
+  </h4>
+</div>
+
+<table class="task-list-container table">
   <thead>
     <tr>
-      <th scope="col">Title </th>
-      <th scope="col">Due Date</th>
-      <th scope="col">Priority</th>
-      <th scope="col">Status</th>
-      <th scope="col">Actions</th>
-
+      <th>Title</th>
+      <th>Due Date</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr></tr>
-   <td></td>
-   <td></td>
-   <td></td>
-   <td></td>
-   <td></td>
-
-
-      <!-- *ngFor="let taskItem of tasks"[task]="taskItem"> -->
-
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.title }}</td>
+      <td>{{ task.dueDate }}</td>
+      <td>{{ task.priority }}</td>
+      <td>{{ task.status }}</td>
+      <td>
+        <img src="../../assets/img/visibility_FILL0_wght400_GRAD0_opsz24.svg" alt="visibility">
+        <img src="../../assets/img/edit_square_FILL0_wght400_GRAD0_opsz24.svg" alt="edit">
+        <img src="../../assets/img/delete_FILL0_wght400_GRAD0_opsz24.svg" alt="delete">
+      </td>
+    </tr>
   </tbody>
 </table>
+</div>
