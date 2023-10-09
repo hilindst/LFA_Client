@@ -1,30 +1,26 @@
+
+<!-- <app-view-task></app-view-task>
+<app-edit-task></app-edit-task> -->
+
 <div class="task-list content">
 <header>
   <h1>Task List</h1>
 </header>
+
+<!-- Add Task Modal -->
+<div class="addtask">
+<app-add-task *ngIf="generalService.showAddTask"></app-add-task>
+<button (click)="generalService.showAddTask = true">Add Task</button>
+</div>
+
+<!-- Dropdown Filter -->
 <div class="filter">
   <label>Filter by: </label>
   <select name="" id=""></select>
   <select name="" id=""></select>
 </div>
-<div>
-  <div>
-    <mat-form-field>
-      <input
-        matInput
-        [(ngModel)]="name"
-        placeholder="What's your favorite color?"
-      />
-    </mat-form-field>
-  </div>
-  <div>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </div>
-  <h4 *ngIf="color">
-    You selected:
-    <p style="font-weight: bold">{{ color }}</p>
-  </h4>
-</div>
+
+<!-- Task List Table -->
 
 <table class="task-list-container table">
   <thead>

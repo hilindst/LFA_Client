@@ -1,11 +1,46 @@
-<h1 mat-dialog-title>Hi {{data.name}}</h1>
-<div mat-dialog-content>
-  <p>What's your favorite color?</p>
-  <mat-form-field>
-    <input matInput [(ngModel)]="data.color">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.color" cdkFocusInitial>Ok</button>
+
+<div class="overlay" (click)="generalService.showAddTask=false"></div>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header d-flex">
+    <h1>Add a New Task</h1>
+    <button class="btn btn-close justify-content-end flexgrow" (click)="generalService.showAddTask=false"></button>
+  </div>
+  <!-- Form Input -->
+<div class="modal-body">
+    <form class="row g-3" id="newTaskForm">
+        <div class="col-7">
+          <label for="inputNewTaskName" class="form-label">Task</label>
+          <input type="text" class="form-control" id="inputNewTaskName" maxlength="25" placeholder="Name the task">
+        </div>
+        <div class="col-md-5">
+          <label for="inputNewDueDate" class="form-label">Due Date</label>
+          <input type="text" class="form-control" id="inputNewDueDate">
+        </div>
+        <div class="col-7">
+          <label for="inputNewDetails" class="form-label">Details</label>
+          <textarea type="text" class="form-control" id="inputNewDetails" maxlength="250" placeholder="Describe the task" style="height: 10em;"></textarea>
+        </div>
+
+        <div class="col-md-5 d-flex:inline align-self-center">
+          <label for="inputNewPriority" class="form-label">Priority</label>
+            <select class="form-select" aria-label="Priority" id="inputNewPriority">
+              <option selected value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <label for="inputNewStatus" class="form-label">Status</label>
+            <select class="form-select" aria-label="Status" id="inputNewStatus">
+              <option selected value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+            <div class="d-flex justify-content-evenly">
+            <button class="btn btn-secondary" id="cancel" (click)="generalService.showAddTask=false">Cancel</button>
+            <button class="btn btn-success" id="create" >Create</button>
+          </div>
+
+
+
 </div>

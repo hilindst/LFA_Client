@@ -1,25 +1,18 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import {
-  MatDialogRef,
-  MatDialogModule,
-  MAT_DIALOG_DATA,
-} from '@angular/material/dialog';
-export interface ModalData {
-  name: string;
-  color: string;
-}
+import { Component } from '@angular/core';
+import { Task } from 'src/app/shared/task.model';
+import { GeneralService } from 'src/app/shared/services/general.service';
+
 @Component({
   selector: 'app-add-task',
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css'],
 })
-export class AddTaskComponent implements OnInit {
-  constructor(
-    public dialogRef: MatDialogRef<AddTaskComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: ModalData
-  ) {}
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+export class AddTaskComponent{
+  constructor(public generalService: GeneralService){}
+
   ngOnInit() {}
+
+  resetForm() {
+
+}
 }
