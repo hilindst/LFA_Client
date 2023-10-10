@@ -1,11 +1,11 @@
 
-<div class="overlay" (click)="showAddTask.showAddTask=false"></div>
+<div class="overlay" (click)="ShowEditTask.showEditTask=false"></div>
 
 <div class="container">
   <!-- Header -->
   <div class="header d-flex">
     <h1>Add a New Task</h1>
-    <button class="btn btn-close" (click)="showAddTask.showAddTask=false"></button>
+    <button class="btn btn-close" (click)="ShowEditTask.showEditTask=false"></button>
   </div>
   <!-- Form Input -->
 <div class="modal-body">
@@ -37,7 +37,7 @@
               <option value="Done">Done</option>
             </select>
             <div class="d-flex justify-content-evenly">
-            <button class="btn btn-secondary" id="cancel" (click)="showAddTask.showAddTask=false">Cancel</button>
+            <button class="btn btn-secondary" id="cancel" (click)="ShowEditTask.showEditTask=false">Cancel</button>
             <button class="btn btn-success" id="create" >Create</button>
           </div>
 

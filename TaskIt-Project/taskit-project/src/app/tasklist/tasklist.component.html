@@ -9,8 +9,8 @@
 
 <!-- Add Task Modal -->
 <div class="addtask">
-<app-add-task *ngIf="generalService.showAddTask"></app-add-task>
-<button (click)="generalService.showAddTask = true">Add Task</button>
+<app-add-task *ngIf="showAddTask.showAddTask"></app-add-task>
+<button (click)="showAddTask.showAddTask = true">Add Task</button>
 </div>
 
 <!-- Dropdown Filter -->
@@ -39,9 +39,16 @@
       <td>{{ task.priority }}</td>
       <td>{{ task.status }}</td>
       <td>
+        <a href="#">
         <img src="../../assets/img/visibility_FILL0_wght400_GRAD0_opsz24.svg" alt="visibility">
-        <img src="../../assets/img/edit_square_FILL0_wght400_GRAD0_opsz24.svg" alt="edit">
+        </a>
+        <a href="#">
+        <app-edit-task *ngIf="showEditTask.showEditTask"></app-edit-task>
+        <img src="../../assets/img/edit_square_FILL0_wght400_GRAD0_opsz24.svg" alt="edit"  (click)="showEditTask.showEditTask = true">
+        </a>
+        <a href="#">
         <img src="../../assets/img/delete_FILL0_wght400_GRAD0_opsz24.svg" alt="delete">
+        </a>
       </td>
     </tr>
   </tbody>
