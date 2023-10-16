@@ -10,7 +10,7 @@
 <!-- Add Task Modal -->
 <div class="addtask">
 <app-add-task *ngIf="showAddTask.showAddTask"></app-add-task>
-<button (click)="showAddTask.showAddTask = true">Add Task</button>
+<button class="btn btn-success" (click)="showAddTask.showAddTask = true">Add Task</button>
 </div>
 
 <!-- Dropdown Filter -->
@@ -47,7 +47,8 @@
         <img src="../../assets/img/edit_square_FILL0_wght400_GRAD0_opsz24.svg" alt="edit"  (click)="showEditTask.showEditTask = true">
         </a>
         <a href="#">
-        <img src="../../assets/img/delete_FILL0_wght400_GRAD0_opsz24.svg" alt="delete">
+          <app-delete-task *ngIf="showDeleteTask.showDeleteTask"></app-delete-task>
+        <img src="../../assets/img/delete_FILL0_wght400_GRAD0_opsz24.svg" alt="delete" (click)="showDeleteTask.showDeleteTask = true">
         </a>
       </td>
     </tr>

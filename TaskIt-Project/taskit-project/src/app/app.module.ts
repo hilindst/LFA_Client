@@ -7,6 +7,8 @@ import { AddTaskComponent } from './tasklist/add-task/add-task.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
 import { EditTaskComponent } from './tasklist/edit-task/edit-task.component';
+import { DeleteTaskComponent } from './tasklist/delete-task/delete-task.component';
+import { KanbanBoardComponent } from './kanban-board/kanban-board.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { EditTaskComponent } from './tasklist/edit-task/edit-task.component';
     TasklistComponent,
     AddTaskComponent,
     EditTaskComponent,
+    DeleteTaskComponent,
+    KanbanBoardComponent,
   ],
   imports: [
     BrowserModule,

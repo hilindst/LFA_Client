@@ -1,11 +1,13 @@
-<div class="row">
+<div class="row d-flex">
 <div class="col-md-3">
-  <app-sidebar></app-sidebar>
+  <app-sidebar (featureSelected)="onNavigate($event)"></app-sidebar>
 </div>
 
+<div class="col-md-9 pl-3">
+  <app-tasklist *ngIf="loadedFeature !== 'kanban'"></app-tasklist>
+  <app-kanban-board
+  *ngIf="loadedFeature === 'kanban'"></app-kanban-board>
 
-<div class="col-md-9">
-  <app-tasklist></app-tasklist>
 </div>
 </div>
 

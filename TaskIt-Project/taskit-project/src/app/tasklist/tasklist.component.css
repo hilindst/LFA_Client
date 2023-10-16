@@ -35,3 +35,6 @@ table th {
   display: flex;
 }
 
+.btn {
+  background-color: #48C15B;
+}

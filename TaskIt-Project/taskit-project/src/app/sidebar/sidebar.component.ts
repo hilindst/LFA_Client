@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { User } from '../shared/user.model';
 
 @Component({
@@ -6,11 +6,14 @@ import { User } from '../shared/user.model';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent  {
+  @Output() featureSelected = new EventEmitter<string>();
+
   user = new User ("Space Ghost", "sg@coast2coast.com", "../../assets/img/spaceghost.png")
 
-  ngOnInit(): void {
 
+  onSelect(feature: string){
+    this.featureSelected.emit(feature);
   }
 }
 

@@ -3,6 +3,7 @@ import { Task } from '../shared/task.model';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { ShowAddTask } from '../shared/services/show-add-task.service';
 import { ShowEditTask } from '../shared/services/show-edit-task.service';
+import { ShowDeleteTask } from '../shared/services/show-delete-task.service';
 
 @Component({
   selector: 'app-tasklist',
@@ -10,7 +11,7 @@ import { ShowEditTask } from '../shared/services/show-edit-task.service';
   styleUrls: ['./tasklist.component.css']
 })
 export class TasklistComponent implements OnInit {
-constructor(public showAddTask: ShowAddTask, public showEditTask: ShowEditTask){
+constructor(public showAddTask: ShowAddTask, public showEditTask: ShowEditTask, public showDeleteTask: ShowDeleteTask){
 
 }
 

@@ -7,12 +7,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 12;
 }
-.btn-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+
 .container{
+  display: block;
   z-index: 13;
   margin: auto;
   position: fixed;
@@ -27,16 +24,22 @@
   background-color: white;
 }
 
-.form-select {
-  margin-bottom: 10px;
+.header {
+  flex-wrap: wrap;
+  height: 50%;
+  color: black;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  text-align: center;
+  padding: 10% 10% 5%;
 }
 
-#cancel, #create {
-width: 8em;
+.btn {
+  width: 10em
 }
 
-h1 {
-  font-weight: bold;
-  margin: 40px 10px 10px 10px;
+.btn-row {
+  display: flex;
+  justify-content: space-evenly;
 }
-
