@@ -1,15 +1,15 @@
 <div class="container">
-<div class="sidebar col-md-3">
+<div class="sidebar list-group-item col-md-3">
 
   <div class="logo">
     <img src="../../assets/img/Logotaskit.jpg"/>
   </div>
-  <div class="task-list btn btn-success" (click)="onSelect('task-list')">Task List</div>
-  <div class="task-list btn btn-success" (click)="onSelect('kanban')">Kanban Board</div>
+  <div class="task-list btn btn-success" routerLinkActive="active" routerLink="/tasklist">Task List</div>
+  <div class="task-list btn btn-success" routerLinkActive="active" routerLink="/kanban-board">Kanban Board
   </div>
 
   <div>
-    <div class="list-group-item user col-md-3">
+    <div class="list-group-item user">
       <span>
       <img
       [src]="user.imagePath"

@@ -3,6 +3,7 @@
   padding: 0;
 }
 .container {
+  display: flex;
   width: 100%;
   min-width:min-content;
 
@@ -39,7 +40,7 @@
 
   .user {
   display: flex;
-  position: absolute;
+  align-self: flex-end;
   bottom: 0;
   left: 0;
   justify-content: center;
@@ -47,6 +48,6 @@
   align-items: center;
   gap: 10px;
   border-top: 2px solid #DDD;
-  border-right: 2px solid #D2D2D2;
+
   background: #FFF;
   }

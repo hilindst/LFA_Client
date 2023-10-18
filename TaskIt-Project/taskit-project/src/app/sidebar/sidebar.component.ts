@@ -11,10 +11,6 @@ export class SidebarComponent  {
 
   user = new User ("Space Ghost", "sg@coast2coast.com", "../../assets/img/spaceghost.png")
 
-
-  onSelect(feature: string){
-    this.featureSelected.emit(feature);
-  }
 }
 
 
