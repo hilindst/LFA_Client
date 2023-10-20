@@ -1,9 +1,9 @@
 import { Component, OnInit} from '@angular/core';
-import { Task } from '../shared/task.model';
+import { Task } from 'src/app/shared/task.model';
 import { AddTaskComponent } from './add-task/add-task.component';
-import { ShowAddTask } from '../shared/services/show-add-task.service';
-import { ShowEditTask } from '../shared/services/show-edit-task.service';
-import { ShowDeleteTask } from '../shared/services/show-delete-task.service';
+import { ShowAddTask } from 'src/app/shared/services/show-add-task.service';
+import { ShowEditTask } from 'src/app/shared/services/show-edit-task.service';
+import { ShowDeleteTask } from 'src/app/shared/services/show-delete-task.service';
 import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
