@@ -23,7 +23,7 @@
   bottom: 0;
   right: 0;
   width: 80%;
-  height: 70%;
+  height: 50%;
   box-shadow: 5px 5px 6px #00000059;
   border-radius: 5px;
   background-color: white;
@@ -40,4 +40,9 @@ width: 8em;
 h1 {
   font-weight: bold;
   margin: 40px 10px 10px 10px;
+}
+
+
+.form .ng-invalid.ng-touched {
+  border: 1px solid red;
 }

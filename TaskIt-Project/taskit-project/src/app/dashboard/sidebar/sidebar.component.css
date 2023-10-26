@@ -1,28 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-.container {
-  display: flex;
-  width: 100%;
-  min-width:min-content;
-
-}
 .sidebar {
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   padding-top: 40px;
-  flex-shrink: 0;
   background-color: #fff;
   border-right: 2px solid #D2D2D2;
-  display: block;
   }
 
 
   .logo {
-  display: flex;
   margin-left: 10px;
   align-items: center;
   }
@@ -39,15 +26,14 @@
   }
 
   .user {
+  align-self: flex-end;
+  margin-top: auto;
   display: flex;
-  bottom: 0;
-  left: 0;
   justify-content: center;
   padding: .8em 1em;
   align-items: center;
   gap: 10px;
   border-top: 2px solid #DDD;
-
   background: #FFF;
   }
 

@@ -22,7 +22,8 @@
 
 <!-- Task List Table -->
 
-<table class="task-list-container table">
+<!--Change all of table to CSS Grid instead  -->
+<div class="task-list-container table">
   <thead>
     <tr>
       <th>Title</th>
@@ -42,7 +43,7 @@
         <a href="#">
         <img src="../../assets/img/visibility_FILL0_wght400_GRAD0_opsz24.svg" alt="visibility">
         </a>
-        <a href="#">
+        <a style="cursor: pointer">
         <app-edit-task *ngIf="showEditTask.showEditTask"></app-edit-task>
         <img src="../../assets/img/edit_square_FILL0_wght400_GRAD0_opsz24.svg" alt="edit"  (click)="showEditTask.showEditTask = true">
         </a>
@@ -53,5 +54,5 @@
       </td>
     </tr>
   </tbody>
-</table>
+</div>
 </div>

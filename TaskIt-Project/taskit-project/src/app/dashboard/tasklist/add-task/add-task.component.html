@@ -9,36 +9,37 @@
   </div>
   <!-- Form Input -->
 <div class="modal-body">
-    <form class="row g-3" id="newTaskForm">
+    <form class="row g-3" id="addTaskForm" [formGroup]="addTaskForm" (ngSubmit)="onCreate()">
         <div class="col-7">
           <label for="inputNewTaskName" class="form-label">Task</label>
-          <input type="text"  class="form-control" id="inputNewTaskName" maxlength="25" placeholder="Name the task">
+          <input type="text"  class="form-control" id="inputNewTaskName" maxlength="25" placeholder="Name the task" formControlName="title">
+          <span class="help-block text-danger" *ngIf="addTaskForm.get('title').invalid && addTaskForm.get('title').touched">Please enter a valid title</span>
         </div>
         <div class="col-md-5">
           <label for="inputNewDueDate" class="form-label">Due Date</label>
-          <input type="date"  class="form-control" id="inputNewDueDate">
+          <input type="date"  class="form-control" id="inputNewDueDate" formControlName="date">
         </div>
         <div class="col-7">
           <label for="inputNewDetails" class="form-label">Details</label>
-          <textarea type="text"  class="form-control" id="inputNewDetails" maxlength="250" placeholder="Describe the task" style="height: 10em;"></textarea>
+          <textarea type="text"  class="form-control" id="inputNewDetails" maxlength="250" placeholder="Describe the task" style="height: 10em;" formControlName="details"></textarea>
         </div>
 
         <div class="col-md-5 d-flex:inline align-self-center">
           <label for="inputNewPriority" class="form-label">Priority</label>
-            <select class="form-select"  aria-label="Priority" id="inputNewPriority">
+            <select class="form-select"  aria-label="Priority" id="inputNewPriority" formControlName="priority" ngModel="Medium">
               <option selected value="Low">Low</option>
               <option value="Medium">Medium</option>
               <option value="High">High</option>
             </select>
             <label for="inputNewStatus" class="form-label">Status</label>
-            <select class="form-select"  aria-label="Status" id="inputNewStatus">
+            <select class="form-select"  aria-label="Status" id="inputNewStatus" formControlName="status">
               <option selected value="To Do">To Do</option>
               <option value="In Progress">In Progress</option>
               <option value="Done">Done</option>
             </select>
             <div class="d-flex justify-content-evenly">
             <button class="btn btn-secondary" id="cancel" (click)="showAddTask.showAddTask=false">Cancel</button>
-            <button class="btn btn-success" id="create" >Create</button>
+            <button type="submit" class="btn btn-success" id="create" [disabled]="!addTaskForm.valid" >Create</button>
           </div>
 
 

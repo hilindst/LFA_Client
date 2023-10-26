@@ -1,21 +1,25 @@
-<div class="container d-flex flex-col">
-<div class="sidebar list-group-item col-md-2">
-
-  <div class="logo">
-    <img src="../../assets/img/Logotaskit.jpg"/>
+<div class="d-flex mb-3 sidebar">
+  <div class="top-sidebar d-flex flex-column">
+    <div class="p-2">
+    <div class="logo">
+     <img src="../../assets/img/Logotaskit.jpg"/>
+    </div>
+    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="tasklist">Task List
+    </div>
+    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="kanban-board">Kanban Board
+    </div>
   </div>
-  <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/tasklist">Task List</div>
-  <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/kanban-board">Kanban Board
-  </div>
 
-  <div>
-    <div class="list-group-item user flex-grow-1">
+
+  <div class="user d-flex">
+    <div>
       <span>
       <img
       [src]="user.imagePath"
       alt="{{ user.name }}"
       class="img-responsive"
       style="max-height: 50px; border-radius: 75%; align-items: center;"></span>
+    </div>
     <div>
         <h4 class="list-group-item-heading">{{ user.name }}</h4>
         <p class="list-group-item-text">{{ user.email }}</p>

@@ -19,9 +19,6 @@ constructor(public showAddTask: ShowAddTask, public showEditTask: ShowEditTask, 
   tasks: Task[] = [
     new Task("Clean Out Garage", "Nov 23, 2023", "High", "To Do"),
     new Task("Clean Out Garage", "Nov 23, 2023", "High", "To Do"),
-    new Task("Clean Out Garage", "Nov 23, 2023", "High", "To Do"),
-    new Task("Clean Out Garage", "Nov 23, 2023", "High", "To Do"),
-    new Task("Clean Out Garage", "Nov 23, 2023", "High", "To Do"),
 
   ];
 
