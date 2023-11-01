@@ -8,11 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit{
   constructor(private router: Router, private route: ActivatedRoute){}
-
-  ngOnInit(){}
-
   loadedFeature = 'kanban'
   title = 'taskit-project';
+
+  ngOnInit(){
+
+  }
+
+
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
