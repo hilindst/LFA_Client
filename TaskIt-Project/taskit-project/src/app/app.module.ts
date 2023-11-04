@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { SharedComponent } from './shared/shared.component';
 import { AddTaskComponent } from './dashboard/tasklist/add-task/add-task.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { TasklistComponent } from './dashboard/tasklist/tasklist.component';
@@ -18,7 +17,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   declarations: [
     AppComponent,
     SidebarComponent,
-    SharedComponent,
     AddTaskComponent,
     EditTaskComponent,
     DeleteTaskComponent,

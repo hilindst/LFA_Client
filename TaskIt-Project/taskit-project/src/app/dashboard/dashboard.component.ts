@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,9 +16,7 @@ export class DashboardComponent implements OnInit{
 
   }
 
-
-
   onNavigate(feature: string) {
     this.loadedFeature = feature;
   }
-}
+  }
