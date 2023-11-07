@@ -15,6 +15,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.authService.isLoginMode = false;
   }
 }

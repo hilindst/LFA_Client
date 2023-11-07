@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { tap, BehaviorSubject, throwError, catchError } from 'rxjs';
 import { User } from "./user.model";
 
@@ -26,14 +26,15 @@ export interface AuthResponseData {
   providedIn: "root"
 })
 
-export class AuthService {
+export class AuthService implements OnInit {
   isLoginMode = false;
   currentUser = new BehaviorSubject<User>(null);
   constructor(private http: HttpClient) {}
 
-  onSwitchAuthMode(){
-    this.isLoginMode = !this.isLoginMode;
+  ngOnInit(): void {
+      this.isLoginMode = false;
   }
+
 
   signUp(email: string, password: string, imagePath?: string) {
     return this.http

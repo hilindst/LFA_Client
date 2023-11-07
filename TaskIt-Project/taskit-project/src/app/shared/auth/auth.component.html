@@ -33,7 +33,7 @@
 
     <!-- BUTTONS -->
     <p>Don't have an account?</p>
-    <a (click)="onSwitchAuthMode()">
+    <a style="cursor: pointer;" (click)="onSwitchAuthMode()">
       Sign Up
     </a>
     <button class="btn btn-success" type="submit" [disabled]="!authFormRef.valid">
@@ -95,7 +95,7 @@
 
     <!-- BUTTONS -->
     <p>Have an account?</p>
-    <a (click)="onSwitchAuthMode()">
+    <a style="cursor: pointer;" (click)="onSwitchAuthMode()">
       Login
     </a>
     <button class="btn btn-success" type="submit" [disabled]="!authFormRef.valid">
