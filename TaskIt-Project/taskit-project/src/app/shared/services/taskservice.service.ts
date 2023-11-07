@@ -12,4 +12,17 @@ export class TaskserviceService {
     new Task("Clean Out Garage", "Clean Out Garage", "Nov 23, 2023", "High", "To Do"),
 
   ];
+
+  updateTask(){
+
+  }
+
+  getTask(){
+
+  }
+
+  addTask(){
+
+  }
+
 }

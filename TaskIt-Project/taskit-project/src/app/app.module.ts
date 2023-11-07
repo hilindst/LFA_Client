@@ -11,6 +11,8 @@ import { KanbanBoardComponent } from './dashboard/kanban-board/kanban-board.comp
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthComponent } from './shared/auth/auth.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,15 +25,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     KanbanBoardComponent,
     LandingPageComponent,
     DashboardComponent,
-    TasklistComponent
+    TasklistComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent],
 
 })

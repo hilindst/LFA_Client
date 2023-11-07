@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { User } from '../../shared/user.model';
+import { User } from '../../shared/auth/user.model';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,7 @@ import { User } from '../../shared/user.model';
 export class SidebarComponent  {
   @Output() featureSelected = new EventEmitter<string>();
 
-  user = new User ("Space Ghost", "sg@coast2coast.com", "../../assets/img/spaceghost.png")
+  constructor(public user: User){}
 
 }
 

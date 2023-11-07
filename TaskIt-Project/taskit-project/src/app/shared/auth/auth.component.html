@@ -1,0 +1,107 @@
+<ng-container *ngIf="isLoginMode; then login; else newSignUp"></ng-container>
+  <ng-template #login>
+    <div class="container"></div>
+    <h1>Welcome Back!</h1>
+    <p>Let's get to work.</p>
+
+  <form #authFormRef="ngForm" (ngSubmit)="onAuthFormSubmit(authFormRef)">
+    <!-- EMAIL -->
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      email
+      ngModel
+      required
+    />
+    <!-- . . . -->
+
+    <!-- PASSWORD -->
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      minlength="6"
+      ngModel
+      required
+    />
+    <!-- . . . -->
+
+    <!-- BUTTONS -->
+    <p>Don't have an account?</p>
+    <a (click)="onSwitchAuthMode()">
+      Sign Up
+    </a>
+    <button class="btn btn-success" type="submit" [disabled]="!authFormRef.valid">
+      Submit
+    </button>
+
+
+  </form>
+  <p class="alert alert-danger mt-3" *ngIf="error">{{ error }}</p>
+  </ng-template>
+
+
+<ng-template #newSignUp>
+  <div class="container">
+    <h1>Welcome to </h1>
+    <img src="../../assets/img/Logotaskit.jpg"/>
+    <p>Sign up to get things done.</p>
+
+  <form #authFormRef="ngForm" (ngSubmit)="onAuthFormSubmit(authFormRef)">
+    <!-- NAME -->
+    <label for="firstName">First Name</label>
+    <input id="firstName"
+    name="firstName"
+    class="form-control"
+    ngModel
+    required />
+    <label for="lastName">Last Name</label>
+    <input id="lastName"
+    name="lastName"
+    class="form-control"
+    ngModel
+    required />
+
+    <!-- EMAIL -->
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      class="form-control"
+      email
+      ngModel
+      required
+    />
+    <!-- . . . -->
+
+    <!-- PASSWORD -->
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      minlength="6"
+      ngModel
+      required
+    />
+    <!-- . . . -->
+
+    <!-- BUTTONS -->
+    <p>Have an account?</p>
+    <a (click)="onSwitchAuthMode()">
+      Login
+    </a>
+    <button class="btn btn-success" type="submit" [disabled]="!authFormRef.valid">
+      Submit
+    </button>
+  </form>
+  <p class="alert alert-danger mt-3" *ngIf="error">{{ error }}</p>
+</div>
+</ng-template>

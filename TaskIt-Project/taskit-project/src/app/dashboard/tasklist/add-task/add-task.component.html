@@ -9,7 +9,10 @@
   </div>
   <!-- Form Input -->
 <div class="modal-body">
-    <form class="row g-3" id="addTaskForm" [formGroup]="addTaskForm" (ngSubmit)="onCreate()">
+    <form class="row g-3"
+    id="addTaskForm"
+    [formGroup]="addTaskForm"
+     (ngSubmit)="onCreate([addTaskForm])">
         <div class="col-7">
           <label for="inputNewTaskName" class="form-label">Task</label>
           <input type="text"  class="form-control" id="inputNewTaskName" maxlength="25" placeholder="Name the task" formControlName="title">
