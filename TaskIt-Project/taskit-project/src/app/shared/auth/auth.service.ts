@@ -29,6 +29,8 @@ export interface AuthResponseData {
 export class AuthService implements OnInit {
   isLoginMode = false;
   currentUser = new BehaviorSubject<User>(null);
+  userToken: string = null;
+  m
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {

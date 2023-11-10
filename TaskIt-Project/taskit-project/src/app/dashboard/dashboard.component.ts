@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../shared/auth/auth.service';
 
 
 @Component({
@@ -7,16 +8,22 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit{
-  constructor(private router: Router, private route: ActivatedRoute){}
+export class DashboardComponent implements OnInit, OnDestroy{
+  isAuthenticated = false;
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService){}
   loadedFeature = 'kanban'
   title = 'taskit-project';
 
   ngOnInit(){
 
+
   }
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
+  }
+
+  ngOnDestroy(): void {
+    this.authService.currentUser.unsubscribe();
   }
   }

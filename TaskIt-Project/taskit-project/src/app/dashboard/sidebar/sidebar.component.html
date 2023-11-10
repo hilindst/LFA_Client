@@ -4,10 +4,17 @@
     <div class="logo">
      <img src="../../assets/img/Logotaskit.jpg"/>
     </div>
-    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="tasklist">Task List
+  <div *ngIf="isAuthenticated">
+    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/tasklist">Task List
     </div>
-    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="kanban-board">Kanban Board
+  </div>
+  <div *ngIf="isAuthenticated">
+    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/kanban-board">Kanban Board
     </div>
+  </div>
+  <div *ngIf="!isAuthenticated">
+    <a class="task-list btn btn-secondary" routerLink="/auth" routerLinkActive="active">Auth</a>
+  </div>
   </div>
 
 
@@ -15,7 +22,7 @@
     <div>
       <span>
       <img
-      src="/src/assets/img/spaceghost.png"
+      src="../../../assets/img/spaceghost.png"
       alt="Current User Profile Pic"
       class="img-responsive"
       style="max-height: 50px; border-radius: 75%; align-items: center;"></span>
@@ -24,8 +31,8 @@
         <h4 class="list-group-item-heading">Current User Name</h4>
         <p class="list-group-item-text">Current User Email</p>
     </div>
-    <div>
-        <a style="cursor: pointer;">
+    <div *ngIf="isAuthenticated">
+        <a style="cursor: pointer;" routerLink="/auth" routerLinkActive="active" >
         <img src="../../assets/img/Frame 9.svg" alt="log-out">
         </a>
     </div>
