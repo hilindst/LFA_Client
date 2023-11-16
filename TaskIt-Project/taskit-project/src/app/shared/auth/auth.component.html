@@ -1,6 +1,8 @@
-<ng-container *ngIf="isLoginMode; then login; else newSignUp"></ng-container>
+<ng-container  *ngIf="isLoginMode; then login; else newSignUp"></ng-container>
   <ng-template #login>
-    <div class="container"></div>
+    <div class="container d-flex justify-content-center align-items-center">
+    <div class="box">
+
     <h1>Welcome Back!</h1>
     <p>Let's get to work.</p>
 
@@ -43,13 +45,16 @@
 
   </form>
   <p class="alert alert-danger mt-3" *ngIf="error">{{ error }}</p>
+</div>
+</div>
   </ng-template>
 
 
 <ng-template #newSignUp>
-  <div class="container">
-    <h1>Welcome to </h1>
-    <img src="../../assets/img/Logotaskit.jpg"/>
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="box">
+    <h1>Welcome to
+    <img src="../../assets/img/Logo.svg"/></h1>
     <p>Sign up to get things done.</p>
 
   <form #authFormRef="ngForm" (ngSubmit)="onAuthFormSubmit(authFormRef)">
@@ -103,5 +108,6 @@
     </button>
   </form>
   <p class="alert alert-danger mt-3" *ngIf="error">{{ error }}</p>
+</div>
 </div>
 </ng-template>

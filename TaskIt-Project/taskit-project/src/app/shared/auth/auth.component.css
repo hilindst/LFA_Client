@@ -1,0 +1,11 @@
+.box {
+  background-color:#f1efef;
+  border-radius: 5px;
+  border: 1px solid #e1dfdfda;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}

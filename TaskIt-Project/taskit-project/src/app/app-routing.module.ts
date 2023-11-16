@@ -8,6 +8,7 @@ import { DeleteTaskComponent } from "./dashboard/tasklist/delete-task/delete-tas
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AuthComponent } from "./shared/auth/auth.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 
 const appRoutes: Routes = [
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
       {path: ':id/delete', component: DeleteTaskComponent}
     ] },
     {path: 'kanban-board', component: KanbanBoardComponent}
-  ]}
+  ]},
+  {path: '**', component: PageNotFoundComponent}
 ]
 
 @NgModule({

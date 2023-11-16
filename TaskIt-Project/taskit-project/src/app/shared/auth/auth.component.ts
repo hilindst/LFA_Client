@@ -46,7 +46,7 @@ export class AuthComponent implements OnInit {
     authObsrv.subscribe(
       (res) => {
         console.log(res);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard']);
       },
       errorMessage => {
         console.log(errorMessage);

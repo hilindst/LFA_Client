@@ -8,10 +8,10 @@ import { AuthService } from '../shared/auth/auth.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit, OnDestroy{
+export class DashboardComponent implements OnInit{
   isAuthenticated = false;
   constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService){}
-  loadedFeature = 'kanban'
+  loadedFeature = 'kanban-board';
   title = 'taskit-project';
 
   ngOnInit(){
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
     this.loadedFeature = feature;
   }
 
-  ngOnDestroy(): void {
+  /* ngOnDestroy(): void {
     this.authService.currentUser.unsubscribe();
-  }
+  } */
   }
