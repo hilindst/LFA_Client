@@ -1,7 +1,12 @@
-.box {
+.box, .form {
   background-color:#f1efef;
   border-radius: 5px;
   border: 1px solid #e1dfdfda;
+  padding: 5em;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  width: 95%;
+  height: fit-content;
 }
 
 .container {

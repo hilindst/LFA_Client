@@ -9,7 +9,22 @@
 
 <div class="row row-container">
 <div class="col-4">
-    <div class="container"></div>
+    <div class="container">
+      <div class="card" *ngFor="let task of tasks" style="width: 18rem;">
+        <div class="col"> {{ task.title }} </div>
+        <div class="col">{{ task.dueDate | date }}</div>
+        <div class="col">{{ task.priority }}</div>
+        <div class="col">{{ task.status }}</div>
+        <div class="col">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">{{task.details}}</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 

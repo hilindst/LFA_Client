@@ -1,6 +1,6 @@
 .demo {
-  border-radius: 5px;
-  border: 20px solid #CFFFD7;
+  border-radius: 10px;
+  border: 40px solid #CFFFD7;
 }
 
 .box {
@@ -8,10 +8,21 @@
   border-radius: 5px;
   border: 1px solid #e1dfdfda;
   padding: 3rem;
-  font-size: 20px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .container {
   height: 100%;
   width: 100%;
+}
+
+h3 {
+  padding: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-wrap: wrap;
 }
