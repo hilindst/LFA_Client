@@ -5,7 +5,7 @@ import { ShowAddTask } from 'src/app/shared/services/show-add-task.service';
 import { ShowEditTask } from 'src/app/shared/services/show-edit-task.service';
 import { ShowDeleteTask } from 'src/app/shared/services/show-delete-task.service';
 import { ActivatedRoute, Router} from '@angular/router';
-import { TaskserviceService } from 'src/app/shared/services/taskservice.service';
+import { TaskService } from 'src/app/shared/services/taskservice.service';
 
 @Component({
   selector: 'app-tasklist',
@@ -13,9 +13,9 @@ import { TaskserviceService } from 'src/app/shared/services/taskservice.service'
   styleUrls: ['./tasklist.component.css']
 })
 export class TasklistComponent implements OnInit {
-  tasks = this.taskService.tasks;
+  tasks = this.taskService.taskList;
 
-constructor(public showAddTask: ShowAddTask, public showEditTask: ShowEditTask, public showDeleteTask: ShowDeleteTask, private router: Router, private route: ActivatedRoute, private taskService: TaskserviceService ){
+constructor(public showAddTask: ShowAddTask, public showEditTask: ShowEditTask, public showDeleteTask: ShowDeleteTask, private router: Router, private route: ActivatedRoute, private taskService: TaskService ){
 
 }
 

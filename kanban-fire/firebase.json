@@ -1,0 +1,12 @@
+{
+  "hosting": [
+    {
+      "target": "kanban-fire",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ],
+  "database": {
+    "rules": "database.rules.json"
+  }
+}

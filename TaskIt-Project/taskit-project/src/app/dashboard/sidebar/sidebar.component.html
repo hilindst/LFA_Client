@@ -5,11 +5,11 @@
      <img src="../../assets/img/Logotaskit.jpg"/>
     </div>
   <div *ngIf="isAuthenticated">
-    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/tasklist">Task List
+    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/dashboard/tasklist">Task List
     </div>
   </div>
   <div *ngIf="isAuthenticated">
-    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/kanban-board">Kanban Board
+    <div class="task-list btn btn-secondary" routerLinkActive="active" routerLink="/dashboard/kanban-board">Kanban Board
     </div>
   </div>
   <div *ngIf="!isAuthenticated">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TaskserviceService } from 'src/app/shared/services/taskservice.service';
+import { TaskService } from 'src/app/shared/services/taskservice.service';
 
 @Component({
   selector: 'app-kanban-board',
@@ -8,8 +8,12 @@ import { TaskserviceService } from 'src/app/shared/services/taskservice.service'
   styleUrls: ['./kanban-board.component.css']
 })
 export class KanbanBoardComponent implements OnInit{
-  tasks = this.taskService.tasks;
-  constructor (private taskService, TaskserviceService, private route: ActivatedRoute ) {}
+  name: string;
+  dueDate: Date;
+  priority: string;
+  status: string;
+  tasks = this.taskService.taskList;
+  constructor (private taskService: TaskService, private route: ActivatedRoute ) {}
 
   ngOnInit(): void {
 

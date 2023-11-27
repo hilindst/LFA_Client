@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable, OnInit } from "@angular/core";
 import { tap, BehaviorSubject, throwError, catchError } from 'rxjs';
 import { User } from "./user.model";
+import { Router } from "@angular/router";
 
 
 const AUTH_API_KEY = "AIzaSyCuqrPgNscdzRVuGCqfH-ObV_hVQG1qcxg";
@@ -31,7 +32,7 @@ export class AuthService implements OnInit {
   currentUser = new BehaviorSubject<User>(null);
   userToken: string = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
       this.isLoginMode = false;
@@ -41,11 +42,11 @@ export class AuthService implements OnInit {
   signUp(email: string, password: string, imagePath?: string) {
     return this.http
       .post<AuthResponseData>(SIGN_UP_URL + AUTH_API_KEY, {
-        email,
-        password,
+        email: email,
+        password: password,
         returnSecureToken: true
       })
-      .pipe(catchError(this.handleError),
+      .pipe(catchError(this.handleError.bind(this)),
         tap(res => {
           // Use "Object Destructuring" to get access to all response values
           const { email, localId, idToken, expiresIn } = res;
@@ -62,7 +63,7 @@ export class AuthService implements OnInit {
         password: password,
         returnSecureToken: true
       })
-      .pipe(catchError(this.handleError),
+      .pipe(catchError(this.handleError.bind(this)),
         tap(res => {
           const { email, localId, idToken, expiresIn } = res;
           this.handleAuth(email, localId, idToken, +expiresIn, imagePath);
@@ -103,4 +104,12 @@ export class AuthService implements OnInit {
       }
     return throwError(errorMessage);
   }
+
+  logout() {
+    this.currentUser.next(null);
+    localStorage.removeItem('userData');
+    localStorage.removeItem('profileData');
+    this.router.navigate(['/landing-page']);
+  }
+
 }
