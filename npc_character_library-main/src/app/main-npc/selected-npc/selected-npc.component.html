@@ -1,0 +1,130 @@
+<div class="container">
+  <div *ngIf="npc; else noNpcSelected" class="card">
+    <!-- Tab Navigation -->
+    <ul class="nav nav-tabs" id="npcDetailsTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="details-tab" data-bs-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true">Details</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="description-tab" data-bs-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="false">Description</a>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="npcDetailsTabContent">
+      <!-- Details Tab Pane -->
+      <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+        <div class="row">
+          <!--left hand col-->
+          <div class="col-5 mt-3 mx-auto p-2">
+            <!-- Editable fields for Role, Race, Class, Age, Gender -->
+            <div *ngFor="let field of npcFields" class="p-2 ml-5">
+              <label id="npcLabel">{{ field.label }}:</label><br>
+              <div *ngIf="isEditMode; else viewMode">
+                <input type="text" [(ngModel)]="npc[field.property]" class="form-control mb-2" title="{{ field.label }}" placeholder="{{ field.label }}">
+              </div>
+              <ng-template #viewMode>
+                <h4>{{ npc[field.property] }}</h4>
+              </ng-template>
+            </div>
+          </div>
+          <!--right hand col-->
+          <div class="col-5 mx-auto p-2">
+            <img id="displayedNpcImg" [src]="npc.imgUrl" alt="{{ npc.npcName }}" class="img-fluid mb-3 npc-image">
+            <!-- Editable fields for Alignment and Last Seen Location -->
+            <div *ngIf="isEditMode; else viewAdditionalFields">
+              <div class="p-2">
+                <label id="npcLabel">Alignment:</label>
+                <input type="text" [(ngModel)]="npc.npcAlignment" class="form-control mb-2" title="Alignment" placeholder="Alignment">
+              </div>
+              <div class="p-2">
+                <label id="npcLabel">Last Seen Location:</label>
+                <input type="text" [(ngModel)]="npc.npcLocation" class="form-control mb-2" title="Location" placeholder="Location">
+              </div>
+            </div>
+            <ng-template #viewAdditionalFields>
+              <div class="p-2">
+                <label id="npcLabel">Alignment:</label>
+                <h4>{{ npc.npcAlignment }}</h4>
+              </div>
+              <div class="p-2">
+                <label id="npcLabel">Last Seen Location:</label>
+                <h4>{{ npc.npcLocation }}</h4>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+
+      <!-- Description Tab Pane -->
+      <div class="tab-pane fade" id="description" role="tabpanel" aria-labelledby="description-tab">
+        <div class="col-12 mx-auto p-2">
+          <label>Description:</label><br>
+          <div *ngIf="isEditMode; else viewDescription">
+            <textarea [(ngModel)]="npc.npcDescription" class="form-control mb-2" title="Description" placeholder="Description"></textarea>
+          </div>
+          <ng-template #viewDescription>
+            <p class="container border border-2 npc-description">
+              {{ npc.npcDescription }}
+            </p>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Mode Toggle Button -->
+    <div class="text-center my-3">
+      <button class="btn btn-primary" (click)="toggleEditMode()">
+        {{ isEditMode ? 'Cancel' : 'Edit NPC' }}
+      </button>
+      <button class="btn btn-warning" (click)="saveNpc()" *ngIf="isEditMode">Save Changes</button>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmModal2">Delete NPC</button>
+    </div>
+
+    <!-- Confirm Modal -->
+    <div class="modal modal-lg fade" id="confirmModal2">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header" id="confirmModal2Header">
+            <h1 class="modal-title fs-2" id="confirmModal2Label">Delete this NPC?</h1>
+            <button type="button" class=" btn btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-5" id="confirmModal2Body">
+            <h2 class="display-5 text-center p-5">Are you sure you want to delete {{ npc.npcName }}?</h2>
+          </div>
+          <div class="modal-footer" id="confirmModal2Footer">
+            <button type="submit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#deleteModal2" (click)="onDeleteNpc($event, npc)">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Delete Modal -->
+    <div class="modal modal-lg fade" id="deleteModal2">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content">
+          <div class="modal-header" id="deleteModal2Header">
+            <h1 class="modal-title fs-2" id="deleteModal2Label">NPC Deleted!</h1>
+            <button type="button" class=" btn btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body p-5" id="deleteModal2Body">
+            <h2 class="display-4 text-center p-5"> {{ npc.npcName }} Deleted!</h2>
+          </div>
+          <div class="modal-footer" id="deleteModal2Footer">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="select_an_npc_img">
+    <ng-template #noNpcSelected>
+      <div class="no-npc-message text-center">
+        <img src="../assets/img/select_an_npc.png" alt="No NPC Selected" class="img-fluid" style="max-width: 35vw;">
+      </div>
+    </ng-template>
+  </div>
+
+
+</div>

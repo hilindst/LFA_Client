@@ -1,0 +1,70 @@
+.container {
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.card {
+  box-shadow: 1px 1px 20px 1px #000;
+  margin: 20px;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-inline: 5px;
+  color: #000;
+}
+
+.btn:hover {
+  box-shadow: 1px 0px 10px 1px #935FA7;
+}
+
+.nav-tabs {
+  background-color: #0D0628;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 10px;
+}
+
+.nav-link {
+  color: aliceblue;
+}
+
+.nav-link.active {
+  background-color: goldenrod;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+p {
+  text-align: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+#npcLabel {
+  font-weight: bolder;
+}
+
+#description {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#deleteModal2Header, #deleteModal2Footer, #confirmModal2Header, #confirmModal2Footer {
+  background-image: linear-gradient(var(--main-bg-color), #000000);
+  color: var(--main-text-color);
+
+}
+
+#deleteModal2Body, #confirmModal2Body {
+  background-image: url(../../../assets/img/paper.jpg);
+  filter: brightness(90%)
+}
+
+#displayedNpcImg {
+  border: 2px solid #0D0628;
+  border-radius: 1.2rem;
+  box-shadow: 1px 0px 10px 1px #935FA7;
+
+}
