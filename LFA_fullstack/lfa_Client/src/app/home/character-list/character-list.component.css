@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+  margin-left: 10px;
+  background-image: url(../../../assets/img/paper.jpg);
+  background-color: var(--main-bg-color);
+}
+
+.table {
+  box-shadow: 1px 1px 20px 1px #000;
+}
+
+.table th {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.table .row-img {
+  width: 100px; /* or your desired image width */
+  height: auto;
+}
+
+.table td {
+  vertical-align: middle; /* This centers the text vertically */
+  border-top: none;
+  background-color: var(--table-color);
+}
+
+.table .row-name, .table .row-role {
+  padding: 0.5em; /* Adds some padding around the text */
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: none;
+}
+
+.table-bordered {
+  border-bottom: none;
+}
+
+.pagination-controls {
+  display: flex;
+  padding: 0px 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin-inline: 10px;
+}
+
+.btn:hover {
+  box-shadow: 1px 0px 5px 1px #000;
+}
+
+
+/* Rounded Table Corners */
+table {
+  /* Change these properties */
+  --border: 1px solid black;
+  border-radius: 10px;
+
+  /* Don't change these properties */
+  border-spacing: 0;
+  border-collapse: separate;
+  border: var(--border);
+  overflow: hidden;
+ }
+
+ /* Apply a border to the bottom of all but the last row */
+ table>thead>tr:not(:last-child)>th,
+ table>thead>tr:not(:last-child)>td,
+ table>tbody>tr:not(:last-child)>th,
+ table>tbody>tr:not(:last-child)>td,
+ table>tfoot>tr:not(:last-child)>th,
+ table>tfoot>tr:not(:last-child)>td,
+ table>tr:not(:last-child)>td,
+ table>tr:not(:last-child)>th,
+ table>thead:not(:last-child),
+ table>tbody:not(:last-child),
+ table>tfoot:not(:last-child) {
+  border-bottom: var(--border);
+ }
+
+#deleteModalHeader, #deleteModalFooter, #confirmModalHeader, #confirmModalFooter {
+  background-image: linear-gradient(var(--main-bg-color), #000000);
+  color: var(--main-text-color);
+
+}
+
+#deleteModalBody, #confirmModalBody {
+  background-image: url(../../../assets/img/paper.jpg);
+  filter: brightness(90%)
+}
