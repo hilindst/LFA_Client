@@ -6,46 +6,43 @@
 
         <thead>
           <tr>
-            <th style="width: 25%;" (click)="handleNpcSort('name')">Name <img src="../assets/img/sort.png" alt="Sort Icon" style="max-height: 25px; max-width: 25px;"></th>
-            <th style="width: 25%;" (click)="handleNpcSort('role')">Role <img src="../assets/img/sort.png" alt="Sort Icon" style="max-height: 25px; max-width: 25px;"></th>
-            <th style="width: 25%;"><input type="text" placeholder="Search..." class="form-control" (input)="onSearchTermChange($event.target.value)"></th>
-            <th style="width: 25%;"><button class="btn btn-warning" (click)="onAddNpc()">Add NPC</button></th>
+           <!--  <th style="width: 25%;"><button class="btn btn-warning" (click)="onAddCharacter()">Add Character</button></th> -->
           </tr>
         </thead>
 
         <tbody>
-          <tr *ngFor="let npc of filteredNPCs" (click)="onSelected(npc)">
-            <td style="width: 25%;">{{ npc.npcName }}</td>
-            <td style="width: 25%;">{{ npc.role }}</td>
-            <td style="width: 25%;">
-              <img [src]="npc.imgUrl" alt="An image of {{ npc.npcName }}"
-                class="img-fluid mx-auto d-block" id="npcImg" style="max-height: 100px; width: auto;">
+          <tr *ngFor="let characterInfo of characters">
+            <td style="width: 25%;"> Name: {{ characterInfo.name }}</td>
+            <td style="width: 25%;"> Race: {{ characterInfo.race }}</td>
+            <td style="width: 25%;"> Class: {{ characterInfo.charClass }}</td>
+            <td style="width: 25%;"> Alignment: {{ characterInfo.alignment }}</td>
+            <td style="width: 25%;"> Level: {{ characterInfo.level }}</td>
+            <td style="width: 25%;"> Background: {{ characterInfo.background }}</td>
+            <td style="width: 25%;"> Gender: {{ characterInfo.gender }}</td>
+            <td style="width: 25%;"> Bio: {{ characterInfo.bio }}</td>
+            <td style="width: 25%;"> Adventures:
+              <ul>
+                <li *ngFor="let adventure of characterInfo.adventures">{{ adventure.title }}</li>
+              </ul>
             </td>
-            <td>
-              <button class="btn btn-link p-0" (click)="$event.stopPropagation(); confirmNPC($event, npc)" title="Delete NPC"  data-bs-toggle="modal" data-bs-target="#confirmModal">
-                <img src="../../assets/img/deleteStone.png" alt="Delete" style="max-width: 75px; max-height: 75px; margin-left: 5px;">
-              </button>
-            </td>
+
+           <!--  <td style="width: 25%;">
+              <img [src]="characterInfo.imgUrl" alt="An image of {{ characterInfo.name }}"
+                class="img-fluid mx-auto d-block" id="characterImg" style="max-height: 100px; width: auto;">
+            </td> -->
 
           </tr>
         </tbody>
 
       </table>
 
-      <!-- Pagination Controls -->
-      <div class="pagination-controls">
-        <button class="btn btn-warning" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
-        <span>Page {{ currentPage }} of {{ totalItems / itemsPerPage | ceil }}</span>
-        <button class="btn btn-warning" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage * itemsPerPage >= totalItems">Next</button>
-        <button class="btn btn-warning" (click)="createRandomNpc()">Add Random NPC</button>
-      </div>
 
     </div>
   </div>
 </div>
 
 <!-- Confirm Modal -->
-<div class="modal modal-lg fade" id="confirmModal">
+<!-- <div class="modal modal-lg fade" id="confirmModal">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
     <div class="modal-content">
       <div class="modal-header" id="confirmModalHeader">
@@ -61,7 +58,7 @@
     </div>
   </div>
 </div>
-
+ -->
 <!-- Delete Modal -->
 <div class="modal modal-lg fade" id="deleteModal">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">

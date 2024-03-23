@@ -1,19 +1,44 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, throwError, catchError, tap } from 'rxjs';
-import { Player } from '../../shared/models/player';
-import { environment } from '../../../environments/environment.development';
-
-export interface AuthResponseData {
-
-}
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
+export class AuthenticationService {
+  private readonly tokenSubject = new BehaviorSubject<string | null>(null);
 
-export class AuthService {
-  signOut(): void {
-    console.log
+  constructor(private http: HttpClient, private router: Router) {}
+
+  login(username: string, password: string) {
+    return this.http.post<{ token: string }>(`${environment.apiUrl}/login`, {
+      username,
+      password,
+    });
+  }
+
+  signup(formData: any) {
+    return this.http.post(`${environment.apiUrl}/players`, formData);
+  }
+
+  setToken(token: string) {
+    localStorage.setItem('token', token);
+    this.tokenSubject.next(token);
+  }
+
+  getToken() {
+    return localStorage.getItem('token');
+  }
+
+  isLoggedIn() {
+    return !!this.getToken();
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.tokenSubject.next(null);
+    this.router.navigate(['/login']);
   }
 }
