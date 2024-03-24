@@ -10,8 +10,10 @@
           </tr>
         </thead>
 
+        @defer(on immediate) {
         <tbody>
-          <tr *ngFor="let characterInfo of characters">
+            @for (character of characters; track character.id){
+
             <td style="width: 25%;"> Name: {{ characterInfo.name }}</td>
             <td style="width: 25%;"> Race: {{ characterInfo.race }}</td>
             <td style="width: 25%;"> Class: {{ characterInfo.charClass }}</td>
@@ -25,7 +27,7 @@
                 <li *ngFor="let adventure of characterInfo.adventures">{{ adventure.title }}</li>
               </ul>
             </td>
-
+          }
            <!--  <td style="width: 25%;">
               <img [src]="characterInfo.imgUrl" alt="An image of {{ characterInfo.name }}"
                 class="img-fluid mx-auto d-block" id="characterImg" style="max-height: 100px; width: auto;">
@@ -33,6 +35,7 @@
 
           </tr>
         </tbody>
+      }
 
       </table>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Character } from '../../shared/models/character';
 import { CharacterService } from '../../core/services/character.service'; // Import the CharacterService
 import { CommonModule, NgFor } from '@angular/common';
@@ -14,7 +14,7 @@ import { AuthService } from '../../core/services/auth.service';
 })
 
 export class CharacterListComponent implements OnInit {
-  characters: Character[] = [];
+  @Input({ required: true }) characters: Character[] = [];
   playerId: number; // Example player ID, replace with actual player ID
 
   constructor(private characterService: CharacterService, private authService: AuthService) { }

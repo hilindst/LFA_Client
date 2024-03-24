@@ -3,7 +3,16 @@
   <div class="container flex">
   <div class="row m-0">
     <div class="col-md-6 mx-auto">
-      <app-character-list></app-character-list>
+      <mat-tab-group>
+        <mat-tab label="One">
+          <h1>Characters</h1>
+          <app-character-list [characters]="playerCharacters" />
+        </mat-tab>
+        <mat-tab label="Two">
+          <h1>Adventures</h1>
+          <app-adventure-list [adventures]="playerAdventures" />
+        </mat-tab>
+      </mat-tab-group>
     </div>
     <div class="col-md-6 mx-auto">
       <app-feed></app-feed>
