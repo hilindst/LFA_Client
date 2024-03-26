@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class AuthService {
   private readonly tokenSubject = new BehaviorSubject<string | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {}

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { AuthenticationService } from './core/services/auth.service';
+import { RouterOutlet } from '@angular/router';
+import { MainLayoutComponent } from './core/components/main-layout/main-layout.component';
 
 @Component({
-  selector: 'app-main-layout',
+  selector: 'app-root',
   standalone: true,
-  imports: [RouterModule],
-  templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.scss',
+  imports: [MainLayoutComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
-export class MainLayoutComponent {
-  constructor(public authService:AuthenticationService){}
+export class AppComponent {
+  title = 'LFA_client';
 }

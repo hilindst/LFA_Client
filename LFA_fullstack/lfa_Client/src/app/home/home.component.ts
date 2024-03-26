@@ -12,7 +12,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatTabsModule],
+  imports: [MatTabsModule, FooterComponent, HeaderComponent, AdventureListComponent, CharacterListComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 	constructor(private characterService: CharacterService) {}
 
 	ngOnInit(): void {
-		this.characterService.getCharactersByPlayerId(playerId: number).subscribe({
+		this.characterService.getCharactersByPlayerId().subscribe({
 			next: (characters) => {
 				this.playerCharacters = characters;
 			},

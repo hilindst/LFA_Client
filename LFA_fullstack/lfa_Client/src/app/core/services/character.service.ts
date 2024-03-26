@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Character } from '../../shared/models/character';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +21,14 @@ export class CharacterService {
         );
     }
 
+    createCharacter(): Observable<Character> {
+      return this.http.post<Character>(`${environment.apiUrl}/characters`, {});
+    }
+
     private handleError<T>(operation = 'operation', result?: T) {
       return (error: any): Observable<T> => {
         console.error(error);
         return of(result as T);
       };
     }
-  }
+}
