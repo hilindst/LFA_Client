@@ -8,21 +8,24 @@ import { SelectdetailComponent } from './selectdetail/selectdetail.component';
 import { Character } from '../shared/models/character';
 import { CharacterService } from '../core/services/character.service';
 import {MatTabsModule} from '@angular/material/tabs';
+import { authTokenInterceptor } from '../auth-token.interceptor';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatTabsModule, FooterComponent, HeaderComponent, AdventureListComponent, CharacterListComponent],
+  imports: [MatTabsModule, FooterComponent, HeaderComponent, AdventureListComponent, CharacterListComponent, FeedComponent, SelectdetailComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
 	playerCharacters: Character[] = [];
 
-	constructor(private characterService: CharacterService) {}
+	constructor(private characterService: CharacterService, private authService: AuthService) {}
 
 	ngOnInit(): void {
-		this.characterService.getCharactersByPlayerId().subscribe({
+    const playerId = this.authService.getPlayerId();
+		this.characterService.getCharactersByPlayerId(playerId).subscribe({
 			next: (characters) => {
 				this.playerCharacters = characters;
 			},

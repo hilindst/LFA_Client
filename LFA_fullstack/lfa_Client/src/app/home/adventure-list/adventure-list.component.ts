@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   styleUrl: './adventure-list.component.css'
 })
 
-export class AdventureListComponent implements OnInit, OnDestroy {
-    searchTerm: string = '';
+export class AdventureListComponent {
+    /* searchTerm: string = '';
 
     currentPage: number = 1;
     itemsPerPage: number = 5;
@@ -147,5 +147,5 @@ export class AdventureListComponent implements OnInit, OnDestroy {
       this.applyFilter();
     }
   }
-
+ */
 }

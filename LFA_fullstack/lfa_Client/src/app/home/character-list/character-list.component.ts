@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Character } from '../../shared/models/character';
 import { CharacterService } from '../../core/services/character.service'; // Import the CharacterService
 import { CommonModule, NgFor } from '@angular/common';
-import { Player } from '../../shared/models/player';
 import { AuthService } from '../../core/services/auth.service';
 
 @Component({
@@ -15,7 +14,7 @@ import { AuthService } from '../../core/services/auth.service';
 
 export class CharacterListComponent implements OnInit {
   @Input({ required: true }) characters: Character[] = [];
-  playerId: number; // Example player ID, replace with actual player ID
+  playerId!: number; // Example player ID, replace with actual player ID
 
   constructor(private characterService: CharacterService, private authService: AuthService) { }
 

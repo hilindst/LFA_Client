@@ -14,7 +14,7 @@ import { environment } from '../../environments/environment.development';
 export class FooterComponent {
   isModalShown: boolean = false;
 
-  sendEmail(contactForm: NgForm) {
+  /* sendEmail(contactForm: NgForm) {
     if (contactForm.valid) {
       const templateParams = {
         user_name: 'NPC character Archive Team',
@@ -44,5 +44,5 @@ export class FooterComponent {
 
   closeModal() {
     this.isModalShown = false;
-  }
+  }*/
 }
