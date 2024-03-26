@@ -4,23 +4,17 @@ import { BehaviorSubject, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import * as jwt_decode from 'jwt-decode';
 import { environment } from '../../../environments/environment.development';
+import { JwtPayload } from './jwt-payload';
 
-Injectable({
+@Injectable({
   providedIn: 'root',
 })
 
-interface JwtPayload {
-  player_id: number;
-}
 
 export class AuthService {
   private readonly tokenSubject = new BehaviorSubject<string | null>(null);
 
   constructor(private http: HttpClient, private router: Router) {}
-
-
-
-
 
   login(username: string, password: string) {
     return this.http.post<{ token: string }>(`${environment.apiUrl}/login`, {

@@ -16,6 +16,6 @@
 }
 
 #privacyModalBody, #contactModalBody, #submittedModalBody {
-  background-image: url(../../assets/img/paper.jpg);
+  /* background-image: url(../../assets/img/paper.jpg); */
   filter: brightness(90%)
 }
