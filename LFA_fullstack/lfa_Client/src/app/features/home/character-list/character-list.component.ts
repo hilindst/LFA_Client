@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Character } from '../../shared/models/character';
-import { CharacterService } from '../../core/services/character.service'; // Import the CharacterService
+import { Character } from '../../../shared/models/character';
+import { CharacterService } from '../../../core/services/character.service';// Import the CharacterService
 import { CommonModule, NgFor } from '@angular/common';
-import { AuthService } from '../../core/services/auth.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-character-list',

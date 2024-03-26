@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Character } from '../../shared/models/character';
+import { Character } from '../../../shared/models/character';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 

@@ -14,26 +14,25 @@
         <tbody>
             @for (character of characters; track character.id){
 
-            <td style="width: 25%;"> Name: {{ characterInfo.name }}</td>
-            <td style="width: 25%;"> Race: {{ characterInfo.race }}</td>
-            <td style="width: 25%;"> Class: {{ characterInfo.charClass }}</td>
-            <td style="width: 25%;"> Alignment: {{ characterInfo.alignment }}</td>
-            <td style="width: 25%;"> Level: {{ characterInfo.level }}</td>
-            <td style="width: 25%;"> Background: {{ characterInfo.background }}</td>
-            <td style="width: 25%;"> Gender: {{ characterInfo.gender }}</td>
-            <td style="width: 25%;"> Bio: {{ characterInfo.bio }}</td>
+            <td style="width: 25%;"> Name: {{ character.name }}</td>
+            <td style="width: 25%;"> Race: {{ character.race }}</td>
+            <td style="width: 25%;"> Class: {{ character.charClass }}</td>
+            <td style="width: 25%;"> Alignment: {{ character.alignment }}</td>
+            <td style="width: 25%;"> Level: {{ character.level }}</td>
+            <td style="width: 25%;"> Background: {{ character.background }}</td>
+            <td style="width: 25%;"> Gender: {{ character.gender }}</td>
+            <td style="width: 25%;"> Bio: {{ character.bio }}</td>
             <td style="width: 25%;"> Adventures:
               <ul>
-                <li *ngFor="let adventure of characterInfo.adventures">{{ adventure.title }}</li>
+                <li *ngFor="let adventure of character.adventures">{{ adventure.title }}</li>
               </ul>
             </td>
+            <td style="width: 25%;"> Name: {{ character.player }}</td>
           }
            <!--  <td style="width: 25%;">
               <img [src]="characterInfo.imgUrl" alt="An image of {{ characterInfo.name }}"
                 class="img-fluid mx-auto d-block" id="characterImg" style="max-height: 100px; width: auto;">
             </td> -->
-
-          </tr>
         </tbody>
       }
 

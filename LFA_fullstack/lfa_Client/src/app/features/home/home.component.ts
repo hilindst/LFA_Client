@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../../header/header.component';
+import { FooterComponent } from '../../footer/footer.component';
 import { AdventureListComponent } from './adventure-list/adventure-list.component';
 import { FeedComponent } from './feed/feed.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { SelectdetailComponent } from './selectdetail/selectdetail.component';
-import { Character } from '../shared/models/character';
-import { CharacterService } from '../core/services/character.service';
+import { Character } from '../../shared/models/character';
+import { CharacterService } from '../../core/services/character.service';
 import {MatTabsModule} from '@angular/material/tabs';
-import { authTokenInterceptor } from '../auth-token.interceptor';
-import { AuthService } from '../core/services/auth.service';
+import { authTokenInterceptor } from '../../auth-token.interceptor';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',

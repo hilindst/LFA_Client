@@ -1,38 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-
-      <table class="table">
-
-        <thead>
-          <tr>
-            <th style="width: 25%;" (click)="handleNpcSort('name')">Name <img src="../assets/img/sort.png" alt="Sort Icon" style="max-height: 25px; max-width: 25px;"></th>
-            <th style="width: 25%;" (click)="handleNpcSort('role')">Role <img src="../assets/img/sort.png" alt="Sort Icon" style="max-height: 25px; max-width: 25px;"></th>
-            <th style="width: 25%;"><input type="text" placeholder="Search..." class="form-control" (input)="onSearchTermChange($event.target.value)"></th>
-            <th style="width: 25%;"><button class="btn btn-warning" (click)="onAddNpc()">Add NPC</button></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr *ngFor="let npc of filteredNPCs" (click)="onSelected(npc)">
-            <td style="width: 25%;">{{ npc.npcName }}</td>
-            <td style="width: 25%;">{{ npc.role }}</td>
-            <td style="width: 25%;">
-              <img [src]="npc.imgUrl" alt="An image of {{ npc.npcName }}"
-                class="img-fluid mx-auto d-block" id="npcImg" style="max-height: 100px; width: auto;">
-            </td>
-            <td>
-              <button class="btn btn-link p-0" (click)="$event.stopPropagation(); confirmNPC($event, npc)" title="Delete NPC"  data-bs-toggle="modal" data-bs-target="#confirmModal">
-                <img src="../../assets/img/deleteStone.png" alt="Delete" style="max-width: 75px; max-height: 75px; margin-left: 5px;">
-              </button>
-            </td>
-
+<p>Adventure-List</p>
+<!--
           </tr>
         </tbody>
 
       </table>
 
-      <!-- Pagination Controls -->
+ Pagination Controls
       <div class="pagination-controls">
         <button class="btn btn-warning" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
         <span>Page {{ currentPage }} of {{ totalItems / itemsPerPage | ceil }}</span>
@@ -44,7 +17,7 @@
   </div>
 </div>
 
-<!-- Confirm Modal -->
+Confirm Modal
 <div class="modal modal-lg fade" id="confirmModal">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
     <div class="modal-content">
@@ -62,7 +35,7 @@
   </div>
 </div>
 
-<!-- Delete Modal -->
+Delete Modal
 <div class="modal modal-lg fade" id="deleteModal">
   <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
     <div class="modal-content">
@@ -79,3 +52,4 @@
     </div>
   </div>
 </div>
+ -->
