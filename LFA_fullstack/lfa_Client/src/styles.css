@@ -1,9 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 :root{
-  --teal: rgb(105, 255, 205);
-  --purple: rgb(162, 0, 255);
+  --bgteal: #2bc7ba;
+  --border: #1b3b6e;
+  --ltblue: #26e7ff;
+  --pink: #ff9fb8;
+  --yellow: #f8e758;
+  --white: #f7fdf8;
 
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; };
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; };
+body {
+  background-color: var(--purple);
+}
 

@@ -2,17 +2,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color: var(--purple);
 }
 .container {
   display: flex;
   flex-direction: row;
   height: 100vh;
 }
+.mdc-tab{
+  border-radius: 5px;
+  border: 1 px solid var(--purple);
+}
 .sidebar {
   flex: 0 0 250px; /* Fixed width sidebar */
   background-color: var(--teal);
   padding: 20px;
-  border-right: 1px solid #ccc; /* Add right border to create frame effect */
+  border: 1px solid var(--teal); /* Add right border to create frame effect */
+  border-radius: 10px;
 }
 .main-feed {
   flex: 1; /* Takes remaining space */
