@@ -1,26 +1,24 @@
 <div class="class">
   <app-header></app-header>
   <div class="container flex">
-  <div class="row m-0">
-    <div class="col-md-6 mx-auto">
+    <div class="sidebar">
       <mat-tab-group>
-        <mat-tab label="One">
+        <mat-tab label="Characters">
           <h1>Characters</h1>
           <app-character-list [characters]="playerCharacters" />
         </mat-tab>
-        <mat-tab label="Two">
+        <mat-tab label="Adventures">
           <h1>Adventures</h1>
           <!-- <app-adventure-list [adventures]="playerAdventures" /> -->
         </mat-tab>
       </mat-tab-group>
     </div>
-    <div class="col-md-6 mx-auto">
-      <app-feed></app-feed>
-    </div>
-    <div class="col-md-6 mx-auto">
+    <div class="selected">
       <app-selectdetail></app-selectdetail>
     </div>
-  </div>
+    <div class="main-feed">
+      <app-feed></app-feed>
+    </div>
   </div>
   <app-footer></app-footer>
   </div>
