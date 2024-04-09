@@ -1,16 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Oldenburg&family=Pixelify+Sans:wght@400..700&display=swap');
+
 :root{
-  --bgteal: #2bc7ba;
+  --bgteal: #5bf7a1;
   --border: #1b3b6e;
   --ltblue: #26e7ff;
-  --pink: #ff9fb8;
-  --yellow: #f8e758;
+  --pink: #fcc2d1;
+  --yellow: #fffacd;
   --white: #f7fdf8;
-
 }
-html, body { height: 100%; };
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; };
-body {
-  background-color: var(--purple);
+
+
+html, body { height: 100%; }
+body { margin: 0;
+  font-family:  'Pixelify Sans', sans-serif;
+  background-color: var(--border);
 }
 

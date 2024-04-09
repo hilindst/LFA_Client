@@ -1,34 +1,46 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--purple);
-}
 .container {
   display: flex;
   flex-direction: row;
   height: 100vh;
 }
-.mdc-tab{
-  border-radius: 5px;
-  border: 1 px solid var(--purple);
-}
+
 .sidebar {
+  margin-left: 0px;
   flex: 0 0 250px; /* Fixed width sidebar */
-  background-color: var(--teal);
-  padding: 20px;
-  border: 1px solid var(--teal); /* Add right border to create frame effect */
+  background-color: var(--border);
+  padding: 10px;
   border-radius: 10px;
+  box-shadow: 5px solid var(--border);
 }
+
+.tab-label{
+  background-color: var(--bgteal);
+  padding: 0px;
+  color: blueviolet;
+  text-shadow: 5px solid var(--border);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-label-active {
+  background-color: #007bff; /* Example background color */
+  color: #fff; /* Example text color */
+  border-radius: 5px; /* Example border radius */
+}
+
 .main-feed {
   flex: 1; /* Takes remaining space */
   overflow-y: auto; /* Enable vertical scroll */
+  background-color: var(--border);
   padding: 20px;
-  border-right: 1px solid #ccc; /* Add right border to create frame effect */
+  align-self: center;
+  justify-content: center;
 }
-.selected-box {
-  background-color: var(--teal);
+.selected {
+  background-color: var(--border);
   padding: 20px;
   margin-top: 20px;
-  border-right: 1px solid #ccc; /* Add right border to create frame effect */
+  justify-content: center;
+  align-self: center;
 }

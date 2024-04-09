@@ -2,18 +2,19 @@
   display: flex;
   justify-content: center;
   padding: 20px 0px;
-  margin-left: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: inset 5px var(--border);
   /* background-image: url(../../../assets/img/paper.jpg); */
-  background-color: var(--ltteal);
+  background-color: var(--pink);
 }
-
 .table {
-  box-shadow: 1px 1px 20px 1px #000;
+  box-shadow: 1px 1px 20px 1px var(--border);
 }
 
 .table th {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
+  background-color: var(--pink);
+  color: var(--border);
   padding: 5px;
   vertical-align: middle;
 }
@@ -26,7 +27,7 @@
 .table td {
   vertical-align: middle; /* This centers the text vertically */
   border-top: none;
-  background-color: var(--table-color);
+  background-color: var(--pink);
 }
 
 .table .row-name, .table .row-role {
@@ -54,14 +55,14 @@
 }
 
 .btn:hover {
-  box-shadow: 1px 0px 5px 1px #000;
+  box-shadow: 1px 0px 5px 1px var(--border);
 }
 
 
 /* Rounded Table Corners */
 table {
   /* Change these properties */
-  --border: 1px solid black;
+  --border: 1px solid var(--border);
   border-radius: 10px;
 
   /* Don't change these properties */
@@ -85,14 +86,3 @@ table {
  table>tfoot:not(:last-child) {
   border-bottom: var(--border);
  }
-
-#deleteModalHeader, #deleteModalFooter, #confirmModalHeader, #confirmModalFooter {
-  background-image: linear-gradient(var(--main-bg-color), #000000);
-  color: var(--main-text-color);
-
-}
-
-#deleteModalBody, #confirmModalBody {
-  /* background-image: url(../../../assets/img/paper.jpg); */
-  filter: brightness(90%)
-}

@@ -20,8 +20,13 @@ import { AuthService } from '../../core/services/auth.service';
 })
 export class HomeComponent implements OnInit {
 	playerCharacters: Character[] = [];
+  selectedIndex: number = 0; // Set the default active tab index
 
 	constructor(private characterService: CharacterService, private authService: AuthService) {}
+
+  changeTab(index: number) {
+    this.selectedIndex = index;
+  }
 
 	ngOnInit(): void {
     const playerId = this.authService.getPlayerId();
