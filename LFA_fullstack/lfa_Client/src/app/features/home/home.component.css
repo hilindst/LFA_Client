@@ -1,16 +1,17 @@
 .container {
   display: flex;
-  flex-direction: row;
-  height: 100vh;
 }
 
 .sidebar {
   margin-left: 0px;
+  float: left;
+  height: 100vh;
   flex: 0 0 250px; /* Fixed width sidebar */
-  background-color: var(--border);
+  background-color: var(--bgteal);
   padding: 10px;
   border-radius: 10px;
   box-shadow: 5px solid var(--border);
+
 }
 
 .tab-label{
@@ -23,6 +24,7 @@
   margin-bottom: 20px;
 }
 
+
 .tab-label-active {
   background-color: #007bff; /* Example background color */
   color: #fff; /* Example text color */
@@ -30,17 +32,13 @@
 }
 
 .main-feed {
-  flex: 1; /* Takes remaining space */
-  overflow-y: auto; /* Enable vertical scroll */
-  background-color: var(--border);
-  padding: 20px;
-  align-self: center;
+  background-color: var(--bgteal);
   justify-content: center;
+  align-self: center;
 }
+
 .selected {
-  background-color: var(--border);
-  padding: 20px;
-  margin-top: 20px;
+  background-color: var(--bgteal);
   justify-content: center;
   align-self: center;
 }

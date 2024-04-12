@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from '../../header/header.component';
 import { FooterComponent } from '../../footer/footer.component';
 import { AdventureListComponent } from './adventure-list/adventure-list.component';
 import { FeedComponent } from './feed/feed.component';
@@ -10,11 +9,12 @@ import { CharacterService } from '../../core/services/character.service';
 import {MatTabsModule} from '@angular/material/tabs';
 import { authTokenInterceptor } from '../../auth-token.interceptor';
 import { AuthService } from '../../core/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatTabsModule, FooterComponent, HeaderComponent, AdventureListComponent, CharacterListComponent, FeedComponent, SelectdetailComponent],
+  imports: [MatTabsModule, FooterComponent, AdventureListComponent, CharacterListComponent, FeedComponent, SelectdetailComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 	playerCharacters: Character[] = [];
   selectedIndex: number = 0; // Set the default active tab index
 
-	constructor(private characterService: CharacterService, private authService: AuthService) {}
+	constructor(private characterService: CharacterService, private authService: AuthService, private router: Router) {}
 
   changeTab(index: number) {
     this.selectedIndex = index;
@@ -39,4 +39,9 @@ export class HomeComponent implements OnInit {
 			},
 		});
 	}
+
+  onCreateCharacter():void {
+    console.log('Create Character button clicked');
+    this.router.navigate(['character/create']);
+  }
 }

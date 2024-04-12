@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 style="align-items: center; color: #545454">Create a Character!</h1>
+  <h1 style="align-items: center; color: var(--purple)">Create a Character!</h1>
 
     <form [formGroup]="characterForm" (ngSubmit)="onSubmit()" class="form">
       <div>
@@ -8,31 +8,31 @@
       </div>
       <div>
         <label for="race">race</label>
-        <input type="text" formControlrace="race" id="race" required>
+        <input type="text" formControlName="race" id="race" required>
       </div>
       <div>
         <label for="charClass">Class</label>
-        <input type="text" formControlcharClass="charClass" id="charClass" required>
+        <input type="text" formControlName="charClass" id="charClass" required>
       </div>
       <div>
         <label for="alignment">Alignment</label>
-        <input type="text" formControlalignment="alignment" id="alignment" required>
+        <input type="text" formControlName="alignment" id="alignment" required>
       </div>
       <div>
         <label for="level">Level</label>
-        <input type="text" formControllevel="level" id="level" required>
+        <input type="text" formControlName="level" id="level" required>
       </div>
       <div>
         <label for="gender">Gender</label>
-        <input type="text" formControlgender="gender" id="gender" required>
+        <input type="text" formControlName="gender" id="gender" required>
       </div>
       <div>
         <label for="background">Background</label>
-        <input type="text" formControlbackground="background" id="background" required>
+        <input type="text" formControlName="background" id="background" required>
       </div>
       <div>
         <label for="Bio">Biography</label>
-        <textarea formControlName="Bio" id="Bio" rows="5" required></textarea>
+        <textarea formControlName="bio" id="bio" rows="5" required></textarea>
       </div>
       <button type="submit">Submit</button>
     </form>

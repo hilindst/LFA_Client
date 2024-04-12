@@ -9,20 +9,24 @@ import { environment } from '../../../environments/environment.development';
   providedIn: 'root'
 })
 export class CharacterService {
-    private charactersUrl = 'api/characters';
+    private charactersUrl = 'characters';
 
     constructor(private http: HttpClient) { }
 
     getCharactersByPlayerId(playerId: number): Observable<Character[]> {
-      const url = `${this.charactersUrl}?playerId=${playerId}`;
-      return this.http.get<Character[]>(`${environment.apiUrl}/characters`)
+      const url = `${environment.apiUrl}/${this.charactersUrl}?playerId=${playerId}`;
+      return this.http.get<Character[]>(url)
         .pipe(
           catchError(this.handleError('getCharacters', []))
         );
     }
 
     createCharacter(): Observable<Character> {
-      return this.http.post<Character>(`${environment.apiUrl}/characters`, {});
+      const url = `${environment.apiUrl}/${this.charactersUrl}`;
+      return this.http.post<Character>(url, {})
+      .pipe(
+        catchError(this.handleError<Character>('createCharacter'))
+      );
     }
 
     private handleError<T>(operation = 'operation', result?: T) {
