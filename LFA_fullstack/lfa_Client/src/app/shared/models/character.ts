@@ -28,5 +28,6 @@ export class Character {
     this.playerId = characterInfo.player_id; // Mapping to Ruby's player_id attribute
     this.player = characterInfo.player || null
     this.adventures = characterInfo.adventures || []; // Mapping to associated adventures
+    this.adventures = Array.isArray(characterInfo.adventures) ? characterInfo.adventures : [];
   }
 }

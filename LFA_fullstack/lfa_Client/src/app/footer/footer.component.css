@@ -3,9 +3,10 @@
   z-index: 999;
   overflow: hidden;
   box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  box-shadow: 3px 10px 15px 10px var(--header-shadow-color);
+  background-color:blueviolet;
+  color: var(--yellow);
+  box-shadow: 3px 10px 15px 10px var(--border);
   height: 10vh;
+  position: float;
 }
 

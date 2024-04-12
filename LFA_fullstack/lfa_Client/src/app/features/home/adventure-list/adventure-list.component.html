@@ -1,55 +1,29 @@
-<p>Adventure-List</p>
-<!--
-          </tr>
-        </tbody>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+            @for (adventure of adventures; track adventure.id){
 
-      </table>
-
- Pagination Controls
-      <div class="pagination-controls">
-        <button class="btn btn-warning" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
-        <span>Page {{ currentPage }} of {{ totalItems / itemsPerPage | ceil }}</span>
-        <button class="btn btn-warning" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage * itemsPerPage >= totalItems">Next</button>
-        <button class="btn btn-warning" (click)="createRandomNpc()">Add Random NPC</button>
-      </div>
-
+            <li style="width: 25%;"> Name: {{ adventure.title }}</li>
+            <li style="width: 25%;"> Race: {{ adventure.ruleset }}</li>
+            <li style="width: 25%;"> Class: {{ adventure.description }}</li>
+            <li style="width: 25%;"> Alignment: {{ adventure.status }}</li>
+            <li style="width: 25%;"> Level: {{ adventure.adventureType }}</li>
+            <li style="width: 25%;"> Background: {{ adventure.setting }}</li>
+            <li style="width: 25%;"> Adventures:
+              <ul>
+                @for(character of adventure.characters; track character.id){
+                  <li>{{ character.name }}</li>
+                }
+              </ul>
+            </li>
+            <li style="width: 25%;"> Name: {{ adventure.player }}</li>
+          }
+           <!--  <td style="width: 25%;">
+              <img [src]="adventureInfo.imgUrl" alt="An image of {{ adventureInfo.name }}"
+                class="img-fluid mx-auto d-block" id="adventureImg" style="max-height: 100px; width: auto;">
+            </td> -->
+        </ul>
     </div>
   </div>
 </div>
-
-Confirm Modal
-<div class="modal modal-lg fade" id="confirmModal">
-  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header" id="confirmModalHeader">
-        <h1 class="modal-title fs-2" id="confirmModalLabel">Delete this NPC?</h1>
-        <button type="button" class=" btn btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body p-5" id="confirmModalBody">
-        <h2 class="display-5 text-center p-5">Are you sure you want to delete this NPC?</h2>
-      </div>
-      <div class="modal-footer" id="confirmModalFooter">
-        <button type="submit" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#deleteModal" (click)="onDeleteNpc()">Send</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-Delete Modal
-<div class="modal modal-lg fade" id="deleteModal">
-  <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-    <div class="modal-content">
-      <div class="modal-header" id="deleteModalHeader">
-        <h1 class="modal-title fs-2" id="deleteModalLabel">NPC Deleted!</h1>
-        <button type="button" class=" btn btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body p-5" id="deleteModalBody">
-        <h2 class="display-4 text-center p-5"> NPC Deleted!</h2>
-      </div>
-      <div class="modal-footer" id="deleteModalFooter">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
- -->

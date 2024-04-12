@@ -23,6 +23,6 @@ export class Adventure{
     this.setting = adventureInfo.setting;
     this.playerId = adventureInfo.player_id;
     this.player = adventureInfo.player;
-    this.characters = adventureInfo.characters || [];
+    this.characters = Array.isArray(adventureInfo.characters) ? adventureInfo.characters : [];
   }
 }

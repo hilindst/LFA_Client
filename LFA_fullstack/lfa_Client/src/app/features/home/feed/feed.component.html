@@ -1,44 +1,53 @@
 <div class="container">
+  <h1>Hello</h1>
   <div class="row">
     <div class="col-md-12">
+      <ul>
+        @for (character of characters; track character.id){
 
-      <table class="table">
-
-        <thead>
-          <tr>
-           <!--  <th style="width: 25%;"><button class="btn btn-warning" (click)="onAddCharacter()">Add Character</button></th> -->
-          </tr>
-        </thead>
-
-        @defer(on immediate) {
-        <tbody>
-            @for (character of characters; track character.id){
-
-            <td style="width: 25%;"> Name: {{ character.name }}</td>
-            <td style="width: 25%;"> Race: {{ character.race }}</td>
-            <td style="width: 25%;"> Class: {{ character.charClass }}</td>
-            <td style="width: 25%;"> Alignment: {{ character.alignment }}</td>
-            <td style="width: 25%;"> Level: {{ character.level }}</td>
-            <td style="width: 25%;"> Background: {{ character.background }}</td>
-            <td style="width: 25%;"> Gender: {{ character.gender }}</td>
-            <td style="width: 25%;"> Bio: {{ character.bio }}</td>
-            <td style="width: 25%;"> Adventures:
-              <ul>
-                <li *ngFor="let adventure of character.adventures">{{ adventure.title }}</li>
-              </ul>
-            </td>
-            <td style="width: 25%;"> Name: {{ character.player }}</td>
-          }
-           <!--  <td style="width: 25%;">
+          <li style="width: 25%;"> Name: {{ character.name }}</li>
+          <li style="width: 25%;"> Race: {{ character.race }}</li>
+          <li style="width: 25%;"> Class: {{ character.charClass }}</li>
+          <li style="width: 25%;"> Alignment: {{ character.alignment }}</li>
+          <li style="width: 25%;"> Level: {{ character.level }}</li>
+          <li style="width: 25%;"> Background: {{ character.background }}</li>
+          <li style="width: 25%;"> Gender: {{ character.gender }}</li>
+          <li style="width: 25%;"> Bio: {{ character.bio }}</li>
+          <li style="width: 25%;"> Adventures:
+            <ul>
+              <li> @for (adventure of character.adventures; track adventure.id){
+                <li>{{ adventure.title }}</li>
+              }
+              </li>
+            </ul>
+          </li>
+          <li style="width: 25%;"> Name: {{ character.player }}</li>
+        }
+           <!--  <li style="width: 25%;">
               <img [src]="characterInfo.imgUrl" alt="An image of {{ characterInfo.name }}"
                 class="img-fluid mx-auto d-block" id="characterImg" style="max-height: 100px; width: auto;">
-            </td> -->
-        </tbody>
-      }
+            </li> -->
+          </ul>
+          <ul>
+            @for (adventure of adventures; track adventure.id){
 
-      </table>
-
-
+              <li style="width: 25%;"> Name: {{ adventure.title }}</li>
+              <li style="width: 25%;"> Race: {{ adventure.ruleset }}</li>
+              <li style="width: 25%;"> Class: {{ adventure.description }}</li>
+              <li style="width: 25%;"> Alignment: {{ adventure.status }}</li>
+              <li style="width: 25%;"> Level: {{ adventure.adventureType }}</li>
+              <li style="width: 25%;"> Background: {{ adventure.setting }}</li>
+              <li style="width: 25%;"> Adventures:
+                <ul>
+                  <li> @for (character of adventure.characters; track character.id){
+                    <li>{{ character.name }}</li>
+                  }
+                  </li>
+                </ul>
+              </li>
+              <li style="width: 25%;"> Name: {{ adventure.player }}</li>
+            }
+              </ul>
     </div>
   </div>
 </div>

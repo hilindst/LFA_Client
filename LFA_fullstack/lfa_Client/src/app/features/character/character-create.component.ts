@@ -5,7 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CharacterService } from '../../core/services/character.service';
+import { CharacterService } from '../../shared/services/character.service';
 import { Character } from '../../shared/models/character';
 import { Router } from '@angular/router';
 

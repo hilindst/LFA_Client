@@ -4,9 +4,8 @@
 
 .sidebar {
   margin-left: 0px;
-  float: left;
   height: 100vh;
-  flex: 0 0 250px; /* Fixed width sidebar */
+  flex: 0 0 50px; /* Fixed width sidebar */
   background-color: var(--bgteal);
   padding: 10px;
   border-radius: 10px;
@@ -15,10 +14,9 @@
 }
 
 .tab-label{
-  background-color: var(--bgteal);
+  background-color: var(--yellow);
   padding: 0px;
   color: blueviolet;
-  text-shadow: 5px solid var(--border);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-bottom: 20px;
@@ -31,7 +29,7 @@
   border-radius: 5px; /* Example border radius */
 }
 
-.main-feed {
+/* .main-feed {
   background-color: var(--bgteal);
   justify-content: center;
   align-self: center;
@@ -42,3 +40,4 @@
   justify-content: center;
   align-self: center;
 }
+ */

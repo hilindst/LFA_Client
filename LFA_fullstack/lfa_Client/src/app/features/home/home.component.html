@@ -18,35 +18,28 @@
       <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="changeTab($event.index)" style="margin: 0px; background-color: var(--bgteal); border-top-left-radius: 10px; border-top-right-radius: 10px; border-left: 2px solid var(--yellow)">
         <mat-tab label="Characters">
           <ng-template mat-tab-label>
-          <h1 class="tab-label">Characters</h1>
+          <h1 class="tab-label" style="font-family: 'Pixelify Sans';">Characters</h1>
         </ng-template>
           <app-character-list [characters]="playerCharacters" />
         </mat-tab>
         <mat-tab label="Adventures">
           <ng-template mat-tab-label>
-          <h1 class="tab-label">Adventures</h1>
+          <h1 class="tab-label" style="font-family: 'Pixelify Sans';">Adventures</h1>
         </ng-template>
-          <!-- <app-adventure-list [adventures]="playerAdventures" /> -->
+          <app-adventure-list [adventures]="playerAdventures" />
         </mat-tab>
       </mat-tab-group>
       <button class="btn btn-warning" (click)="onCreateCharacter()">Create Character</button>
+      <button class="btn btn-warning" (click)="onCreateAdventure()">Create Adventure</button>
     </div>
 
-<div class="container">
-  <div class="row">
-    <div class="main-feed">
+<div class="container flex">
+  <div class="col-md-12">
       <app-feed></app-feed>
-    </div>
-  </div>
-<div class="row">
-    <div class="selected">
+  <div class="col-md-12"></div>
       <app-selectdetail></app-selectdetail>
-    </div>
   </div>
 
 </div>
-</div>
-
-<app-footer></app-footer>
 
 

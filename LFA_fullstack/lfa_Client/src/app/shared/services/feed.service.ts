@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-// import { Blog } from '../../shared/models/blog';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment.development';
-import { Character } from '../../shared/models/character';
-import { Adventure } from '../../shared/models/adventure';
+import { Character } from '../models/character';
+import { Adventure } from '../models/adventure';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FeedService {
+
 	constructor(private http: HttpClient) {}
 
 	getCharacters(): Observable<Character[]> {

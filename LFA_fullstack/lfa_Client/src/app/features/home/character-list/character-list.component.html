@@ -1,44 +1,29 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-
-      <table class="table">
-
-        <thead>
-          <tr>
-           <!--  <th style="width: 25%;"><button class="btn btn-warning" (click)="onAddCharacter()">Add Character</button></th> -->
-          </tr>
-        </thead>
-
-        @defer(on immediate) {
-        <tbody>
+        <ul>
             @for (character of characters; track character.id){
 
-            <td style="width: 25%;"> Name: {{ character.name }}</td>
-            <td style="width: 25%;"> Race: {{ character.race }}</td>
-            <td style="width: 25%;"> Class: {{ character.charClass }}</td>
-            <td style="width: 25%;"> Alignment: {{ character.alignment }}</td>
-            <td style="width: 25%;"> Level: {{ character.level }}</td>
-            <td style="width: 25%;"> Background: {{ character.background }}</td>
-            <td style="width: 25%;"> Gender: {{ character.gender }}</td>
-            <td style="width: 25%;"> Bio: {{ character.bio }}</td>
-            <td style="width: 25%;"> Adventures:
+            <li style="width: 25%;"> Name: {{ character.name }}</li>
+            <li style="width: 25%;"> Race: {{ character.race }}</li>
+            <li style="width: 25%;"> Class: {{ character.charClass }}</li>
+            <li style="width: 25%;"> Alignment: {{ character.alignment }}</li>
+            <li style="width: 25%;"> Level: {{ character.level }}</li>
+            <li style="width: 25%;"> Background: {{ character.background }}</li>
+            <li style="width: 25%;"> Gender: {{ character.gender }}</li>
+            <li style="width: 25%;"> Bio: {{ character.bio }}</li>
+            <li style="width: 25%;"> Adventures:
               <ul>
                 <li *ngFor="let adventure of character.adventures">{{ adventure.title }}</li>
               </ul>
-            </td>
-            <td style="width: 25%;"> Name: {{ character.player }}</td>
+            </li>
+            <li style="width: 25%;"> Name: {{ character.player }}</li>
           }
            <!--  <td style="width: 25%;">
               <img [src]="characterInfo.imgUrl" alt="An image of {{ characterInfo.name }}"
                 class="img-fluid mx-auto d-block" id="characterImg" style="max-height: 100px; width: auto;">
             </td> -->
-        </tbody>
-      }
-
-      </table>
-
-
-    </div>
+          </ul>
+      </div>
   </div>
 </div>

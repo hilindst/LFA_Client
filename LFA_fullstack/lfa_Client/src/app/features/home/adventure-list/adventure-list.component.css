@@ -2,20 +2,20 @@
   display: flex;
   justify-content: center;
   padding: 20px 0px;
-  margin-left: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: inset 5px var(--border);
   /* background-image: url(../../../assets/img/paper.jpg); */
-  background-color: var(--main-bg-color);
+  background-color: var(--yellow);
 }
 
-.table {
-  box-shadow: 1px 1px 20px 1px #000;
-}
 
-.table th {
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
+li {
+  background-color: var(--yellow);
+  color: var(--border);
   padding: 5px;
   vertical-align: middle;
+  box-shadow: 1px 1px 20px 1px var(--border)
 }
 
 .table .row-img {

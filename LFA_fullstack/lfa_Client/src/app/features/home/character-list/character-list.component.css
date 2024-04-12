@@ -6,17 +6,15 @@
   border-radius: 10px;
   box-shadow: inset 5px var(--border);
   /* background-image: url(../../../assets/img/paper.jpg); */
-  background-color: var(--pink);
-}
-.table {
-  box-shadow: 1px 1px 20px 1px var(--border);
+  background-color: var(--yellow);
 }
 
-.table th {
-  background-color: var(--pink);
+li {
+  background-color: var(--yellow);
   color: var(--border);
   padding: 5px;
   vertical-align: middle;
+  box-shadow: 1px 1px 20px 1px var(--border)
 }
 
 .table .row-img {
@@ -27,7 +25,7 @@
 .table td {
   vertical-align: middle; /* This centers the text vertically */
   border-top: none;
-  background-color: var(--pink);
+  background-color: var(--yellow);
 }
 
 .table .row-name, .table .row-role {
