@@ -2,24 +2,24 @@ import { Adventure } from "./adventure";
 import { Player } from "./player";
 
 export class Character {
-  id!: number;
+  id?: number;
   name: string;
   race: string;
-  charClass: string;
+  char_class: string;
   alignment: string;
   level: number;
   background: string;
   gender: string;
   bio: string;
-  playerId: number;
-  player: Player;
-  adventures: Adventure[];
+  playerId?: number;
+  player?: Player;
+  adventures?: Adventure[];
 
   constructor(characterInfo: any) {
     this.id = characterInfo.id;
     this.name = characterInfo.name;
     this.race = characterInfo.race;
-    this.charClass = characterInfo.char_class; // Mapping to Ruby's char_class attribute
+    this.char_class = characterInfo.char_class;
     this.alignment = characterInfo.alignment;
     this.level = characterInfo.level;
     this.background = characterInfo.background;

@@ -20,7 +20,7 @@ export class CharacterCreateComponent {
   characterForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     race: new FormControl('', [Validators.required]),
-    charClass: new FormControl('', [Validators.required]),
+    char_class: new FormControl('', [Validators.required]),
     alignment: new FormControl('', [Validators.required]),
     level: new FormControl<number>( 1, [Validators.required]),
     background: new FormControl(''),
@@ -31,8 +31,9 @@ export class CharacterCreateComponent {
   constructor(private characterService: CharacterService, private router: Router) {}
 
   onSubmit() {
+    const character = new Character(this.characterForm.value)
     // call create character service
-    this.characterService.createCharacter().subscribe({
+    this.characterService.createCharacter(character).subscribe({
       next: (character: Character) => {
         console.log('Character created', character);
         this.router.navigate(['/']);

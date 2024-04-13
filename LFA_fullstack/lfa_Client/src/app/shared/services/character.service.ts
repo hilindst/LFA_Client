@@ -9,21 +9,19 @@ import { environment } from '../../../environments/environment.development';
   providedIn: 'root'
 })
 export class CharacterService {
-    private charactersUrl = 'characters';
+
 
     constructor(private http: HttpClient) { }
 
     getCharactersByPlayerId(playerId: number): Observable<Character[]> {
-      const url = `${environment.apiUrl}/${this.charactersUrl}?playerId=${playerId}`;
-      return this.http.get<Character[]>(url)
+      return this.http.get<Character[]>(`${environment.apiUrl}/characters/?playerId=${playerId}`)
         .pipe(
           catchError(this.handleError('getCharacters', []))
         );
     }
 
-    createCharacter(): Observable<Character> {
-      const url = `${environment.apiUrl}/${this.charactersUrl}`;
-      return this.http.post<Character>(url, {})
+    createCharacter(character: Character): Observable<Character> {
+      return this.http.post<Character>(`${environment.apiUrl}/characters`, character)
       .pipe(
         catchError(this.handleError<Character>('createCharacter'))
       );

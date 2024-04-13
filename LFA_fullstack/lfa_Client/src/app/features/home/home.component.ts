@@ -53,7 +53,6 @@ export class HomeComponent implements OnInit {
 	}
 
   onCreateCharacter():void {
-    console.log('Create Character button clicked');
     this.router.navigate(['character/create']);
   }
   onCreateAdventure():void {
