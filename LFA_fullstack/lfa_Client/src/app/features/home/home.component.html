@@ -1,45 +1,39 @@
 <div class="container">
-<div class="sidebar d-flex">
+<div class="sidebar">
   <header class="header d-flex align-items-center">
-    <div class="flex-column align-items-center">
-      <div class="logo-container mr-auto">
-        <img src="..\assets\img\npcLogo.png" alt="Logo" class="header-logo">
-      </div>
-    </div>
     <div class="greeting text-wrap d-none d-md-block ml-3 my-0">
-      <p>Greetings, Traveler</p>
+      <h2>Greetings, Traveler</h2>
     </div>
-    <div class="signout">
-      Logout
-      <!-- <img (click)="signOut()" src="../../assets/img/signout.svg" alt="signout" style="cursor: pointer;width: 25px;height: 25px; padding-left: 5px"> -->
-    </div>
+    <h3>Logout</h3>
   </header>
-
-      <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="changeTab($event.index)" style="margin: 0px; background-color: var(--bgteal); border-top-left-radius: 10px; border-top-right-radius: 10px; border-left: 2px solid var(--yellow)">
-        <mat-tab label="Characters">
-          <ng-template mat-tab-label>
-          <h1 class="tab-label" style="font-family: 'Pixelify Sans';">Characters</h1>
+    <mat-tab-group [selectedIndex]="selectedIndex" (selectedTabChange)="changeTab($event.index)" style="padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+       <mat-tab label="Characters">
+        <ng-template mat-tab-label>
+          <h1 class="tab-label" style="font-family: 'Pixelify Sans'; font-size: 1.5em;">Characters</h1>
         </ng-template>
           <app-character-list [characters]="playerCharacters" />
         </mat-tab>
         <mat-tab label="Adventures">
           <ng-template mat-tab-label>
-          <h1 class="tab-label" style="font-family: 'Pixelify Sans';">Adventures</h1>
+          <h1 class="tab-label" style="font-family: 'Pixelify Sans'; font-size: 1.5em;">Adventures</h1>
         </ng-template>
           <app-adventure-list [adventures]="playerAdventures" />
         </mat-tab>
       </mat-tab-group>
-      <button class="btn btn-warning" (click)="onCreateCharacter()">Create Character</button>
-      <button class="btn btn-warning" (click)="onCreateAdventure()">Create Adventure</button>
+    <div class="form-row submit-btn">
+      <button (click)="onCreateCharacter()">Create Character</button>
+      <button (click)="onCreateAdventure()">Create Adventure</button>
     </div>
-
-<div class="container flex">
-  <div class="col-md-12">
-      <app-feed></app-feed>
-  <div class="col-md-12"></div>
-      <app-selectdetail></app-selectdetail>
   </div>
 
-</div>
 
+<div class="main-content">
+  <div class="row sm-5">
+      <app-feed></app-feed>
+    </div>
+  <div class="row sm-5">
+      <app-selectdetail></app-selectdetail>
+    </div>
+</div>
+</div>
 

@@ -1,3 +1,73 @@
+
+<div class="container">
+  <div class="text">
+     Create a Character
+  </div>
+  <form [formGroup]="characterForm" (ngSubmit)="onSubmit()" class="form">
+     <div class="form-row">
+        <div class="input-data">
+          <input type="text" formControlName="name" id="name" required>
+           <div class="underline"></div>
+          <label for="name">Name</label>
+        </div>
+        <div class="input-data">
+          <input type="text" formControlName="race" id="race" required>
+           <div class="underline"></div>
+           <label for="race">Race</label>
+        </div>
+     </div>
+     <div class="form-row">
+        <div class="input-data">
+          <input type="text" formControlName="char_class" id="char_class" required>
+           <div class="underline"></div>
+           <label for="char_class">Class</label>
+
+        </div>
+        <div class="input-data">
+          <input type="text" formControlName="alignment" id="alignment" required>
+           <div class="underline"></div>
+           <label for="alignment">Alignment</label>
+
+        </div>
+        <div class="input-data">
+          <input type="text" formControlName="level" id="level" required>
+           <div class="underline"></div>
+           <label for="level">Level</label>
+
+        </div>
+        <div class="input-data">
+          <input type="text" formControlName="gender" id="gender" required>
+           <div class="underline"></div>
+           <label for="gender">Gender</label>
+
+        </div>
+        <div class="input-data">
+          <input type="text" formControlName="background" id="background" required>
+           <div class="underline"></div>
+           <label for="background">Background</label>
+
+        </div>
+     </div>
+     <div class="form-row">
+     <div class="input-data textarea">
+        <textarea formControlName="bio" id="bio" rows="8" cols="80" required></textarea>
+        <br />
+        <div class="underline"></div>
+        <label for="Bio">Biography</label>
+        <br />
+        <div class="form-row submit-btn">
+           <div class="input-data">
+              <div class="inner"></div>
+              <input type="submit" value="submit">
+           </div>
+        </div>
+</div>
+</div>
+</form>
+</div>
+
+<!--
+
 <div class="container">
   <h1 style="align-items: center; color: var(--purple)">Create a Character!</h1>
 
@@ -36,4 +106,4 @@
       </div>
       <button type="submit">Submit</button>
     </form>
-  </div>
+  </div> -->

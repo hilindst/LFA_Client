@@ -1,3 +1,19 @@
 .container {
-  background-color: var(--bgteal);
+background-color: white;
+padding: 10px;
+padding-bottom: 60px;
+margin-bottom: 60px;
+border-radius: 10px;
+flex:1;
+}
+
+.feed {
+  height: 60vh;
+  overflow-y: auto;
+}
+
+h1 {
+  background: -webkit-linear-gradient(right, #56d8e4, #9f01ea, #56d8e4, #9f01ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
