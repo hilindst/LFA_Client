@@ -11,12 +11,12 @@
       <p> Setting: {{ adventure.setting }}</p>
       <p> Adventures:
         <ul>
-          <p> @for (character of adventure.characters; track character.id){
-            <p>{{ character.name }}</p>
-          }
-          </p>
+          <div>
+            @for (character of adventure.characters; track character.id){
+            <p>{{ character.name }} by: {{ character.player }}</p>
+            }
+          </div>
         </ul>
-      <p> Name: {{ adventure.player }}</p>
     </div>
     }
   </ul>

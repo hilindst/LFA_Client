@@ -16,10 +16,9 @@
             <ul> Adventures:
               <div>
                 @for (adventure of character.adventures; track adventure.id){
-                <p>{{ adventure.title }}</p>
-                <p> Name: {{ character.player }}</p>
+                <p>{{ adventure.title }} by: {{ adventure.player }}</p>
                 }
-            </div>
+              </div>
             </ul>
             </div>
           }
@@ -40,12 +39,12 @@
               <p> Setting: {{ adventure.setting }}</p>
               <p> Adventures:
                 <ul>
-                  <p> @for (character of adventure.characters; track character.id){
-                    <p>{{ character.name }}</p>
-                  }
-                  </p>
+                  <div>
+                    @for (character of adventure.characters; track character.id){
+                    <p>{{ character.name }} by: {{ character.player }}</p>
+                    }
+                  </div>
                 </ul>
-              <p> Name: {{ adventure.player }}</p>
             </div>
             }
     </ul>

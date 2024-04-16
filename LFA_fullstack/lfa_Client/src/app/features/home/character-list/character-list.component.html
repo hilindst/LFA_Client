@@ -13,9 +13,10 @@
             <p> Bio: {{ character.bio }}</p>
             <ul> Adventures:
               <div>
-                <p *ngFor="let adventure of character.adventures">{{ adventure.title }}</p>
-              </div>
-            <p> Name: {{ character.player }}</p>
+                @for (adventure of character.adventures; track adventure.id){
+                <p>{{ adventure.title }} by: {{ adventure.player}}</p>
+                }
+            </div>
             </ul>
             </div>
           }
