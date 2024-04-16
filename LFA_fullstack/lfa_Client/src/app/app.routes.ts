@@ -16,6 +16,10 @@ export const routes: Routes = [
   },
   {
     path: 'character/create',
-    loadComponent: () => import('./features/character/character-create.component').then((c) => c.CharacterCreateComponent)
+    loadComponent: () => import('./features/create/character-create/character-create.component').then((c) => c.CharacterCreateComponent)
+  },
+  {
+    path: 'adventure/create',
+  loadComponent: () => import('./features/create/adventure-create/adventure-create.component').then((c) => c.AdventureCreateComponent)
   },
 ];

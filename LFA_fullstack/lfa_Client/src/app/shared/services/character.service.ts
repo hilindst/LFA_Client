@@ -9,8 +9,6 @@ import { environment } from '../../../environments/environment.development';
   providedIn: 'root'
 })
 export class CharacterService {
-
-
     constructor(private http: HttpClient) { }
 
     getCharactersByPlayerId(playerId: number): Observable<Character[]> {

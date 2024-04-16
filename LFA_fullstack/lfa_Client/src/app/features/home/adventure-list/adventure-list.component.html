@@ -1,29 +1,23 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <ul>
-            @for (adventure of adventures; track adventure.id){
 
-            <li style="width: 25%;"> Name: {{ adventure.title }}</li>
-            <li style="width: 25%;"> Race: {{ adventure.ruleset }}</li>
-            <li style="width: 25%;"> Class: {{ adventure.description }}</li>
-            <li style="width: 25%;"> Alignment: {{ adventure.status }}</li>
-            <li style="width: 25%;"> Level: {{ adventure.adventureType }}</li>
-            <li style="width: 25%;"> Background: {{ adventure.setting }}</li>
-            <li style="width: 25%;"> Adventures:
-              <ul>
-                @for(character of adventure.characters; track character.id){
-                  <li>{{ character.name }}</li>
-                }
-              </ul>
-            </li>
-            <li style="width: 25%;"> Name: {{ adventure.player }}</li>
+  <ul>
+    @for (adventure of adventures; track adventure.id){
+    <div class="card">
+      <p> Title: {{ adventure.title }}</p>
+      <p> Ruleset: {{ adventure.ruleset }}</p>
+      <p> Description: {{ adventure.description }}</p>
+      <p> Status: {{ adventure.status }}</p>
+      <p> Type: {{ adventure.adventure_type }}</p>
+      <p> Setting: {{ adventure.setting }}</p>
+      <p> Adventures:
+        <ul>
+          <p> @for (character of adventure.characters; track character.id){
+            <p>{{ character.name }}</p>
           }
-           <!--  <td style="width: 25%;">
-              <img [src]="adventureInfo.imgUrl" alt="An image of {{ adventureInfo.name }}"
-                class="img-fluid mx-auto d-block" id="adventureImg" style="max-height: 100px; width: auto;">
-            </td> -->
+          </p>
         </ul>
+      <p> Name: {{ adventure.player }}</p>
     </div>
-  </div>
+    }
+  </ul>
 </div>

@@ -5,8 +5,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CharacterService } from '../../shared/services/character.service';
-import { Character } from '../../shared/models/character';
+import { CharacterService } from '../../../shared/services/character.service';
+import { Character } from '../../../shared/models/character';
 import { Router } from '@angular/router';
 
 @Component({
