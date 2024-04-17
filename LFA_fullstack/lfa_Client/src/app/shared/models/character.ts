@@ -11,9 +11,11 @@ export class Character {
   background: string;
   gender: string;
   bio: string;
+  image?: string;
   playerId?: number;
   player?: Player;
   adventures?: Adventure[];
+  created_at?: string;
 
   constructor(characterInfo: any) {
     this.id = characterInfo.id;

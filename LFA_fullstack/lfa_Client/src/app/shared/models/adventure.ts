@@ -9,9 +9,11 @@ export class Adventure{
   status: boolean = false;
   adventure_type: string;
   setting: string;
+  image?: string;
   playerId?: number;
   player?: Player;
   characters?: Character[];
+  created_at?: string;
 
   constructor(adventureInfo: any) {
     this.id = adventureInfo.id;

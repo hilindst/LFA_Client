@@ -24,6 +24,7 @@ background-color: var(--yellow);
   border-radius: 10px;
   flex-wrap: wrap;
   margin: 10px;
+  justify-content: space-between;
 }
 
 /* On mouse-over, add a deeper shadow */
