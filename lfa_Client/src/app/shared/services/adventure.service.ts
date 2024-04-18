@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Adventure } from '../models/adventure';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { environment } from '../../../environments/environment.development';
+import { environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
