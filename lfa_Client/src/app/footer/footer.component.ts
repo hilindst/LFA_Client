@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 // import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 
 
 @Component({
